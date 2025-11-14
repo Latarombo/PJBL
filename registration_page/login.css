@@ -1,0 +1,190 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins";
+  background-color: #e7d3a5;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* layout */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1040px;
+  gap: 40px;
+}
+
+.bagian-kiri {
+  flex: 1;
+  text-align: center;
+}
+
+.logo-container img {
+  width: 500px;
+  height: auto;
+}
+
+.bagian-kanan {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* card */
+.login-container {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 500px;
+}
+
+.login-container h2 {
+  text-align: center;
+  color: #b04545;
+  margin-bottom: 8px;
+}
+
+.login-container p {
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* bagian from */
+.form-group {
+  gap: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: #000000;
+  font-size: 14px;
+}
+
+.label-kanan a {
+  display: block;
+  margin-bottom: 6px;
+  color: #6096b4;
+  font-size: 14px;
+  text-align: right;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.label-kanan a:hover {
+  text-decoration: underline;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 6px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+.form-group button {
+  background-color: #b04545;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+.form-group button:hover {
+  background-color: #c74f4f;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* opsi login */
+.login-options {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-options p {
+  margin-bottom: 10px;
+  color: #555;
+}
+small {
+  font-size: 14px;
+  color: #6096b4;
+  cursor: pointer;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.social-icons a img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+.social-icons a img:hover {
+  transform: scale(1.1);
+}
+
+/* link registrasi */
+.register-link {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.register-link a {
+  color: #b04545;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+/* responsif*/
+@media (max-width: 900px) {
+  body {
+    align-items: flex-start;
+    padding: 40px 0;
+  }
+
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo-container img {
+    width: 300px;
+  }
+
+  .login-container {
+    margin-top: 30px;
+    width: 90%;
+  }
+}

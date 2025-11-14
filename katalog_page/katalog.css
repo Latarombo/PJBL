@@ -151,181 +151,140 @@ nav {
   transition: 0.3s;
 }
 
-/* Hero */
-.hero {
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-bottom: 50px;
-  margin-top: 50px;
-  border-radius: 12px;
-  text-align: left;
-  padding: 100px 50px;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../images_gnrl/batik_hero2.png");
-  background-size: cover;
-  background-position: center;
-  color: white;
-  object-fit: cover;
-}
-
-.hero h1 {
-  color: #fff;
-  font-size: 48px;
-  padding-right: 100px;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
-.hero p {
-  color: #ffffffcb;
-  font-size: 16px;
-  font-weight: 200;
-  margin-bottom: 30px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 9px 21px;
-  background: linear-gradient(90deg, #6e2b2b, #8a3434, #a54b4b);
-  color: #fff;
-  text-decoration: none;
-  border-radius: 15px;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background: linear-gradient(90deg, #6e2b2b, #8a3434, #a54b4b) !important;
-  transform: translateY(-3px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-section {
-  text-align: center;
-  margin: auto;
-  padding: 30px 100px;
-}
-section h2 {
-  text-align: left;
-  font-size: 28px;
-  margin-bottom: 40px;
-}
-
-/* Katalog */
-.katalog {
-  background-color: #faf7f7;
-}
-
-.grid-katalog {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-}
-
-.item {
-  transition: transform 0.3s ease;
-}
-
-.item img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.item h3 {
-  margin-top: 15px;
-  font-size: 18px;
-  text-align: left;
-  margin-left: 18px;
-}
-
-.item p {
-  font-size: 14px;
-  color: #944f4f;
-  text-align: left;
-  margin-left: 18px;
-}
-
-.item:hover {
-  transform: translateY(-5px);
-}
-
-/* Card */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin-top: 50px;
-}
-
-.card i {
-  font-size: 16px;
-}
-
-.card {
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
-  transition: 0.3s;
-  display: inline-block;
-  flex-direction: column;
-  transition: all 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  background: #fff;
-  color: #944f4f;
-  border: 1px solid rgba(154, 59, 59, 0.4); /*semimerah*/
-}
-
-/* Artikel */
-.artikel h2 {
-  font-size: 28px;
-  margin-bottom: 30px;
-}
-
-.grid-artikel {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 30px;
-}
-
-.artikel-item {
-  display: grid;
-  background-color: #ffffff;
-  border: 1px solid rgba(154, 59, 59, 0.4); /*semimerah*/
-  border-radius: 8px;
-  padding: 20px;
-  transition: transform 0.3s ease;
-  text-align: left;
-}
-
-.artikel-item:hover {
-  transform: translateY(-5px);
-}
-
-.artikel-item img {
+/* card */
+.card-container {
+  display: flex;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  padding: 40px 20px;
+  background-color: #f8f7f6;
+}
+
+.adat-card {
+  display: flex;
+  align-items: flex-start;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 1180px;
+  width: 100%;
+  gap: 20px;
+  box-shadow: 8px 8px 16px;
+  color: #a7a4a4;
+}
+
+/* Bungkus gambar agar bisa dikontrol ukurannya */
+.image-wrapper {
+  flex-shrink: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.adat-image {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 20%;
-  margin-bottom: 10px;
+  border-radius: 15px;
 }
 
-.artikel-item h3 {
-  font-size: 15px;
-  margin-bottom: 10px;
+.adat-content {
+  flex: 1;
 }
 
-.artikel-item p {
-  font-size: 14px;
-  margin-bottom: 10px;
+.adat-content h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #9a3b3b;
+  margin-top: 4;
+}
+
+.adat-content p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem; /* atau 16px */
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.read-more {
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  color: #deac3a;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.read-more:hover {
+  color: dimgrey;
+}
+
+.produk-kebaya {
+  background-color: #faf7f7;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.produk-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 kolom */
+  gap: 24px;
+}
+
+.produk-item img {
+  width: 217px;
+  height: 217px; /* gambar tidak terlalu tinggi */
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.produk-item h4 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 410;
+  font-size: 1rem;
+  margin: 0 0 6px;
+  color: #1c0d0d;
+}
+
+.produk-item p {
+  font-size: 0.85rem;
   color: #944f4f;
+  margin-bottom: 6px;
+}
+
+.harga {
+  font-family: "Roboto", sans-serif;
+  color: #ff5900;
+  font-size: 0.95rem;
+}
+
+.lihat-produk-wrapper {
+  background-color: #faf7f7;
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.lihat-produk-btn {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  padding: 10px 100px;
+  color: #fff;
+  background: linear-gradient(90deg, #9a3b3b, #7e3030);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border: none;
+}
+
+/* Hover: jadi putih dengan border dan teks merah */
+.lihat-produk-btn:hover {
+  background: linear-gradient(90deg, #7e3030, #692828);
 }
 
 /* footer */
@@ -396,4 +355,21 @@ footer.site-footer {
   text-align: center;
   font-size: 13px;
   color: #555;
+}
+
+/* Responsif */
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  footer.site-footer {
+    padding: 30px 40px;
+  }
 }
