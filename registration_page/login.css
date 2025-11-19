@@ -6,44 +6,42 @@ body {
   font-family: "Poppins";
   background-color: #e7d3a5;
   margin: 0;
-  height: 100vh;
+  height: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0;
 }
 
 /* layout */
 .container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 1040px;
+  justify-content: center;
+  max-width: 1440px;
+  padding: 32px;
+  margin: auto;
   gap: 40px;
-}
-
-.bagian-kiri {
-  flex: 1;
-  text-align: center;
 }
 
 .logo-container img {
   width: 500px;
   height: auto;
-}
-
-.bagian-kanan {
-  flex: 1;
-  display: flex;
-  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
+  padding-top: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin: 32px;
 }
 
 /* card */
 .login-container {
-  background-color: #fff;
+  background: #fff;
   border-radius: 16px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-  padding: 30px;
+  padding-bottom: 30px;
+  padding-top: 50px;
   padding-left: 50px;
   padding-right: 50px;
   width: 500px;
@@ -51,8 +49,9 @@ body {
 
 .login-container h2 {
   text-align: center;
+  font-size: 24px;
   color: #b04545;
-  margin-bottom: 8px;
+  margin-bottom: 19px;
 }
 
 .login-container p {
@@ -69,6 +68,7 @@ body {
 
 .form-group label {
   display: block;
+  text-align: left;
   margin-bottom: 6px;
   color: #000000;
   font-size: 14px;
@@ -167,24 +167,120 @@ small {
   text-decoration: underline;
 }
 
-/* responsif*/
-@media (max-width: 900px) {
-  body {
-    align-items: flex-start;
-    padding: 40px 0;
-  }
-
+@media (max-width: 1024px) {
   .container {
-    flex-direction: column;
-    text-align: center;
+    padding: 24px;
   }
 
   .logo-container img {
-    width: 300px;
+    max-width: 400px;
   }
 
   .login-container {
-    margin-top: 30px;
-    width: 90%;
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .logo-container img {
+    max-width: 300px;
+    padding: 20px;
+  }
+
+  .login-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 40px 30px;
+  }
+
+  .login-container h2 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 16px;
+  }
+
+  .logo-container img {
+    max-width: 200px;
+    padding: 16px;
+  }
+
+  .login-container {
+    padding: 30px 20px;
+    border-radius: 12px;
+  }
+
+  .login-container h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .login-container p {
+    font-size: 13px;
+  }
+
+  .form-group label,
+  .label-kanan a {
+    font-size: 13px;
+  }
+
+  .form-group input {
+    padding: 9px;
+    font-size: 13px;
+  }
+
+  .form-group button {
+    padding: 11px;
+    font-size: 14px;
+  }
+
+  .social-icons {
+    gap: 12px;
+  }
+
+  .social-icons a img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .register-link,
+  small {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding: 12px;
+  }
+
+  .logo-container img {
+    max-width: 160px;
+    padding: 12px;
+  }
+
+  .login-container {
+    padding: 24px 16px;
+  }
+
+  .login-container h2 {
+    font-size: 18px;
+  }
+
+  .form-group input {
+    padding: 8px;
+  }
+
+  .form-group button {
+    padding: 10px;
+    font-size: 13px;
   }
 }

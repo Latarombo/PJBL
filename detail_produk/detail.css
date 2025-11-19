@@ -1,0 +1,619 @@
+:root {
+  --bg: #fff;
+  --card: #f9fafb;
+  --muted: #7d8691;
+  --accent: #8b1e1e; /* maroon/red accent */
+  --accent-strong: #7a1212;
+  --radius: 12px;
+  --shadow: 0 6px 20px rgba(18, 24, 33, 0.06);
+  --star: #d4a017;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins";
+  margin: 0;
+  background: var(--bg);
+}
+
+header {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.589);
+  border-bottom: 1px solid rgba(16, 24, 40, 0.06);
+  width: 100%;
+  padding: 15px 38px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  gap: 21px;
+}
+
+.container-header {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+/* logo */
+.logo img {
+  width: 150px;
+  height: auto;
+  display: block;
+}
+
+/* NAV tengah */
+.nav {
+  flex: 1;
+  display: flex;
+  justify-content: right;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav ul li a {
+  color: #1c0d0d;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding: 6px 4px;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  color: #9a3b3b;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: 2px;
+  background: #9a3b3b;
+  border-radius: 2px;
+}
+
+.nav a.active::after {
+  width: 100%;
+}
+
+/* kanan */
+.nav2 {
+  display: flex;
+  align-items: center;
+  gap: 21px;
+}
+
+.icon-btn {
+  width: auto;
+  height: 35px;
+  display: flex;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.icon-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pipe {
+  width: 3px;
+  height: 40px;
+  display: flex;
+  border: none;
+  background: transparent;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  object-fit: cover;
+}
+
+.pipe img {
+  width: 100%;
+  height: 100%;
+  border-radius: 25%;
+  justify-items: center;
+}
+
+.btn-bergabung {
+  background: #1c0d0d;
+  color: #fff;
+  border-radius: 15px;
+  padding: 9px 21px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Main layout */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1440px;
+  margin: 28px auto;
+  padding: 0 38px;
+  gap: 64px;
+}
+
+.container-produk {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* 3 kolom */
+  gap: 20px;
+}
+
+/* item 1–3 berada di kolom pertama */
+.item1 {
+  background-color: aqua;
+  grid-column: 1;
+  grid-row: 1;
+}
+.item2 {
+  background-color: aqua;
+  grid-column: 1;
+  grid-row: 2;
+}
+.item3 {
+  background-color: aqua;
+  grid-column: 1;
+  grid-row: 3;
+}
+
+/* item 4 berada di kolom kedua dan memanjang tinggi */
+.item4 {
+  background-color: aqua;
+  grid-column: 2;
+  grid-row: 1 / span 3; /* memanjang 3 baris ke bawah */
+}
+
+/* item 5 berada di kolom ketiga dan memanjang tinggi */
+.item5 {
+  background-color: aqua;
+  grid-column: 3;
+  grid-row: 1 / span 3;
+}
+
+/* Info Produk */
+.judul-produk {
+  font-size: 36px;
+  font-weight: bold;
+  color: #111827;
+  margin: 0 0 12px;
+}
+
+.subjudul-produk {
+  color: #1c0d0d;
+  margin-top: 14px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.ket-produk {
+  margin-top: 6px;
+  color: var(--muted);
+}
+
+.price-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.price {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 30px;
+  display: block;
+}
+
+.old {
+  color: #b1b5bb;
+  text-decoration: line-through;
+  font-size: 20px;
+  display: block;
+}
+
+.performa {
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.sizes {
+  margin-top: 14px;
+  display: flex;
+  gap: 8px;
+}
+
+.size-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #e6e6e6;
+  background: white;
+  cursor: pointer;
+}
+
+.size-btn.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent-strong);
+}
+
+.material {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.chat-btn {
+  display: block;
+  margin-top: 18px;
+  padding: 12px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  border: 0;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+}
+
+.chat-btn.secondary {
+  background: #fff;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+/* Deskripsi dan Profil */
+.card-desDanProf {
+  border-radius: 16px;
+  background-color: var(--card);
+  padding: 32px;
+}
+
+.judul-profil {
+  color: #1c0d0d;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.profile-card {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding-bottom: 33px;
+}
+
+img .profile-logo {
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.shop-details {
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.shop-performa {
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+/* Description */
+.description {
+  padding-top: 32px;
+  border-top: 1px solid rgba(16, 24, 40, 0.1);
+}
+
+.description h3 {
+  font-size: 24px;
+  font-weight: 600;
+  padding-bottom: 16px;
+  color: #1c0d0d;
+}
+
+.description p {
+  color: var(--muted);
+  line-height: 1.6;
+  padding-bottom: 18px;
+}
+
+/* Spesifikasi */
+.judul-spesifikasi {
+  font-size: 16px;
+  padding-bottom: 20px;
+  font-weight: 600;
+  color: #1c0d0d;
+  text-decoration: noen;
+}
+
+.spesifikasi {
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.spesifikasi li {
+  margin-left: 20px;
+  margin-bottom: 8px;
+}
+
+.spesifikasi-bottom {
+  margin-left: 20px;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+/* Reviews section */
+
+.judul-reviews h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1c0d0d;
+}
+
+.card-reviews {
+  width: 100%;
+  max-height: 296px;
+  gap: 32px;
+}
+
+.statistik {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 20px;
+}
+
+/* card kanan */
+.card-statistik {
+  background: var(--card);
+  width: 373px;
+  height: 296px;
+  align-content: center;
+  text-align: center;
+  border-radius: 16px;
+}
+
+.card-reviews p {
+  color: var(--muted);
+}
+
+.text-big {
+  font-size: 60px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 60px;
+}
+
+/* Card kiri */
+.card-statistik2 {
+  background: var(--card);
+  width: 373px;
+  height: 296px;
+  align-content: center;
+  text-align: center;
+  border-radius: 16px;
+  padding: 32px;
+}
+.hist-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.hist-row .bar {
+  flex: 1;
+  height: 10px;
+  background: #e9eef2;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar > span {
+  display: block;
+  height: 100%;
+  background: var(--star);
+  border-radius: 999px;
+}
+
+.rating-box {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 16px;
+  text-align: center;
+  padding: 32px;
+  align-content: center;
+}
+
+.rating-box h2 {
+  font-size: 40px;
+  margin: 10px 0;
+}
+
+.rating-hist {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.review-list {
+  grid-column: 1 / -1;
+  margin-top: 18px;
+}
+
+.review-item {
+  background: var(--card);
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow);
+}
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.review-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--accent);
+}
+.review-name {
+  font-weight: 700;
+}
+.review-date {
+  color: var(--muted);
+  font-size: 13px;
+  margin-left: auto;
+}
+
+.review-text {
+  margin-top: 8px;
+  color: #333;
+  font-size: 14px;
+}
+
+/* Review form */
+.review-form {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 12px;
+  margin-top: 18px;
+  box-shadow: var(--shadow);
+}
+.review-form textarea {
+  width: 100%;
+  min-height: 100px;
+  border: 1px solid #eee;
+  padding: 12px;
+  border-radius: 8px;
+  resize: vertical;
+}
+
+/* footer */
+footer.site-footer {
+  margin-top: 80px;
+  padding: 40px 48px 20px;
+  background: #ffff;
+  border-top: 1px solid rgba(16, 24, 40, 0.05);
+  font-family: "Poppins";
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* logo dan deskripsi */
+.footer-logo img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.footer-col small {
+  display: block;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* judul kolom */
+.footer-col h6 {
+  margin-bottom: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* Link umum */
+.footer-col a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #444;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: 0.3s ease;
+}
+
+.footer-col a:hover {
+  color: #9a3b3b;
+  text-decoration: none;
+}
+
+/* Ikon */
+.footer-col a i {
+  font-size: 16px;
+}
+
+/* Bagian bawah footer */
+.footer-bottom {
+  margin-top: 32px;
+  border-top: 1px solid rgba(16, 24, 40, 0.1);
+  padding-top: 16px;
+  text-align: center;
+  font-size: 13px;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .thumbs {
+    flex-direction: row;
+    order: 2;
+  }
+  .main-image img {
+    height: 420px;
+  }
+  .product-info {
+    order: 3;
+  }
+}
