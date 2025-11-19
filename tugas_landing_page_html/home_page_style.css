@@ -22,7 +22,7 @@ header {
   background: rgba(255, 255, 255, 0.589);
   border-bottom: 1px solid rgba(16, 24, 40, 0.06);
   width: 100%;
-  padding: 15px 100px;
+  padding: 15px 48px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,7 +36,6 @@ nav {
 }
 
 .container_header {
-  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -153,8 +152,8 @@ nav {
 
 /* Hero */
 .hero {
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-left: 48px;
+  margin-right: 48px;
   margin-bottom: 50px;
   margin-top: 50px;
   border-radius: 12px;
@@ -202,7 +201,7 @@ nav {
 section {
   text-align: center;
   margin: auto;
-  padding: 30px 100px;
+  padding: 30px 48px;
 }
 section h2 {
   text-align: left;
@@ -331,7 +330,7 @@ section h2 {
 /* footer */
 footer.site-footer {
   margin-top: 80px;
-  padding: 40px 100px 20px;
+  padding: 40px 48px 20px;
   background: #ffff;
   border-top: 1px solid rgba(16, 24, 40, 0.05);
   font-family: "Poppins";
