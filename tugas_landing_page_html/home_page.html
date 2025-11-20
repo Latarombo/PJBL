@@ -1,244 +1,347 @@
 <!DOCTYPE html>
 <html lang="id">
   <head>
-    <meta charset="UTF-8" />
-    <title>Landing Page - Pakaian Adat Nusantara</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Nadane — Landing Pakaian Adat Nusantara</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons (Font Awesome) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="home_page_style.css" />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
   </head>
+
   <body>
-    <header>
+    <a class="skip-link" href="#main">Lewati ke konten</a>
+
+    <header class="site-header" role="banner">
       <div class="container_header">
-        <!-- logo sebelah kiri -->
-        <div class="logo">
-          <img src="../images_gnrl/NADANE.png" alt="Logo NADANE" />
+        <div class="logo" aria-hidden="false">
+          <a href="index.html" aria-label="Nadane — Beranda">
+            <img src="../images_gnrl/NADANE.png" alt="Logo NADANE" />
+          </a>
         </div>
 
-<!-- ini di pisah karena saat navigasi di gabung ukuran icon yang kanan menjadi kecil -->
+        <!-- Nav toggle (mobile) -->
+        <button
+          id="navToggle"
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          aria-label="Buka menu"
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M3 6h18M3 12h18M3 18h18"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              fill="none"
+            />
+          </svg>
+        </button>
 
-        <!-- navigasi 1 -->
-        <nav class="nav">
-            <ul>
-              <li><a href="#home" class="active">Beranda</a></li>
-              <li><a href="#katalog">Katalog</a></li>
-              <li><a href="#about">Tentang Kami</a></li>
-              <li><a href="#help">Bantuan</a></li>
-            </ul>
-
-          <!-- navigasi 2: search, gabung, cart, profile -->
-          <div class="nav2">
-
-            <button class="icon-btn">
-              <img src="../images_gnrl/icon/search.svg" alt="search_icon" />
-            </button>
-
-            <button class="btn-bergabung"> 
-              Bergabung
-            </button>
-
-            <div class="pipe">
-              <img src="../images_gnrl/icon/pipe1.svg" alt="profile_icon" />
-            </div>
-
-            <button class="icon-btn">
-              <img src="../images_gnrl/icon/cart.svg" alt="cart_icon" />
-            </button>
-
-            <button class="icon-btn">
-              <img src="../images_gnrl/icon/profile.svg" alt="profile_icon" />
-            </button>
-
-          </div>
+        <nav
+          id="primary-navigation"
+          class="nav"
+          role="navigation"
+          aria-label="Navigasi utama"
+          data-visible="true"
+        >
+          <ul>
+            <li><a href="#home" class="active">Beranda</a></li>
+            <li><a href="#katalog">Katalog</a></li>
+            <li><a href="#about">Tentang Kami</a></li>
+            <li><a href="#help">Bantuan</a></li>
+          </ul>
         </nav>
-      </div>
 
+        <div class="nav2" aria-hidden="false">
+          <button class="icon-btn" aria-label="Cari">
+            <img src="../images_gnrl/icon/search.svg" alt="" />
+          </button>
+
+          <a class="btn-bergabung" href="Login.html">Bergabung</a>
+
+          <div class="pipe" aria-hidden="true"></div>
+
+          <button class="icon-btn" aria-label="Keranjang">
+            <img src="../images_gnrl/icon/cart.svg" alt="" />
+          </button>
+
+          <button class="icon-btn" aria-label="Profil">
+            <img src="../images_gnrl/icon/profile.svg" alt="" />
+          </button>
+        </div>
+      </div>
     </header>
 
-<!-- Home -->
-    <section class="hero">
-      <h1>Jelajahi Kekayaan Pakaian Adat Nusantara</h1>
-      <p>
-        Katalog Lengkap Pakaian Adat dari Seluruh Provinsi — Beli Langsung ke
-        Penjual Lokal.
-      </p>
-      <a href="#" class="btn">Lihat Koleksi</a>
-    </section>
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <h1 id="hero-title">Jelajahi Kekayaan Pakaian Adat Nusantara</h1>
+        <p>
+          Katalog Lengkap Pakaian Adat dari Seluruh Provinsi — Beli Langsung ke
+          Penjual Lokal.
+        </p>
+        <a class="btn" href="#katalog">Lihat Koleksi</a>
+      </section>
 
-<!-- Katalog -->
-    <section class="katalog">
-      <h2>Katalog Populer</h2>
-      <div class="grid-katalog">
-        <div class="item">
-          <img
-            src="../images_gnrl/images_katalog/kebaya.png"
-            alt="Pakaian Adat Kebaya"
-          />
-          <h3>Pakaian Adat Kebaya</h3>
-          <p>•126rb+ pengunjung</p>
-        </div>
-        <div class="item">
-          <img
-            src="../images_gnrl/images_katalog/ulos.png"
-            alt="Pakaian Adat Ulos"
-          />
-          <h3>Pakaian Adat Ulos</h3>
-          <p>•215rb+ pengunjung</p>
-        </div>
-        <div class="item">
-          <img
-            src="../images_gnrl/images_katalog/pesaan.png"
-            alt="Pakaian Adat Pesaan"
-          />
-          <h3>Pakaian Adat Pesa’an</h3>
-          <p>•126rb+ pengunjung</p>
-        </div>
-        <div class="item">
-          <img src="../images_gnrl/images_katalog/batik.png" alt="Pakaian Batik" />
-          <h3>Pakaian Batik</h3>
-          <p>•218rb+ pengunjung</p>
-        </div>
-        <div class="item">
-          <img
-            src="../images_gnrl/images_katalog/batak.png"
-            alt="Pakaian Adat Batak"
-          />
-          <h3>Pakaian Adat Batak</h3>
-          <p>•126rb+ pengunjung</p>
-        </div>
-        <div class="item">
-          <img
-            src="../images_gnrl/images_katalog/kebaya_modern.png"
-            alt="Pakaian Kebaya Modern"
-          />
-          <h3>Pakaian Kebaya Modern</h3>
-          <p>•218rb+ pengunjung</p>
-        </div>
-        <div class="item">
-          <img
-            src="../images_gnrl/images_katalog/minang.png"
-            alt="Pakaian Adat Minangkabau"
-          />
-          <h3>Pakaian Bundo Kanduang</h3>
-          <p>•230rb+ pengunjung</p>
-        </div>
-        <div class="item">
-          <img src="../images_gnrl/images_katalog/maluku.png" alt="Pakaian Adat Maluku" />
-          <h3>Pakaian Adat Maluku</h3>
-          <p>•126rb+ pengunjung</p>
-        </div>
-    </section>
+      <!-- Katalog -->
+      <section class="katalog" id="katalog" aria-labelledby="katalog-title">
+        <h2 id="katalog-title">Katalog Populer</h2>
+        <div class="grid-katalog">
+          <div class="item">
+            <img
+              src="../images_gnrl/images_katalog/kebaya.png"
+              alt="Pakaian Adat Kebaya"
+            />
+            <h3>Pakaian Adat Kebaya</h3>
+            <p>•126rb+ pengunjung</p>
+          </div>
 
-<!-- Card -->
-  <section>
-    <h2>Pesan Pakaian Terbaik Kami</h2>
-    <div class="cards">
-      <div class="card"><i class="fa-solid fa-box-open"></i> Pilih Item Produk</div>
-      <div class="card"><i class="fa-brands fa-twitter"></i> Pilih Sesuai Kemauanmu</div>
-      <div class="card"><i class="fa-solid fa-comment-sms"></i> Hubungi Penjual</div>
-    </div>
-  </section>
+          <div class="item">
+            <img
+              src="../images_gnrl/images_katalog/ulos.png"
+              alt="Pakaian Adat Ulos"
+            />
+            <h3>Pakaian Adat Ulos</h3>
+            <p>•215rb+ pengunjung</p>
+          </div>
 
-<!-- Artikel -->
-    <section class="artikel">
-      <h2>Artikel dan Pendidikan Budaya</h2>
-      <div class="grid-artikel">
-        <div class="artikel-item">
-          <img src="../images_gnrl/artikel/bodo.jpg" alt="Baju Bodo" />
-          <h3>Busana Tertua di Dunia: Baju Bodo Makassar</h3>
-          <p>
-            Mengenal sejarah dan keunikan Baju Bodo sebagai warisan budaya
-            tertua dari Makassar.
-          </p>
+          <div class="item">
+            <img
+              src="../images_gnrl/images_katalog/pesaan.png"
+              alt="Pakaian Adat Pesa’an"
+            />
+            <h3>Pakaian Adat Pesa’an</h3>
+            <p>•126rb+ pengunjung</p>
+          </div>
+
+          <div class="item">
+            <img
+              src="../images_gnrl/images_katalog/batik.png"
+              alt="Pakaian Batik"
+            />
+            <h3>Pakaian Batik</h3>
+            <p>•218rb+ pengunjung</p>
+          </div>
+
+          <div class="item">
+            <img
+              src="../images_gnrl/images_katalog/batak.png"
+              alt="Pakaian Adat Batak"
+            />
+            <h3>Pakaian Adat Batak</h3>
+            <p>•126rb+ pengunjung</p>
+          </div>
+
+          <div class="item">
+            <img
+              src="../images_gnrl/images_katalog/kebaya_modern.png"
+              alt="Pakaian Kebaya Modern"
+            />
+            <h3>Pakaian Kebaya Modern</h3>
+            <p>•218rb+ pengunjung</p>
+          </div>
+
+          <div class="item">
+            <img
+              src="../images_gnrl/images_katalog/minang.png"
+              alt="Pakaian Adat Minangkabau"
+            />
+            <h3>Pakaian Bundo Kanduang</h3>
+            <p>•230rb+ pengunjung</p>
+          </div>
+
+          <div class="item">
+            <img
+              src="../images_gnrl/images_katalog/maluku.png"
+              alt="Pakaian Adat Maluku"
+            />
+            <h3>Pakaian Adat Maluku</h3>
+            <p>•126rb+ pengunjung</p>
+          </div>
         </div>
-        <div class="artikel-item">
-          <img src="../images_gnrl/artikel/batik_hero.jpg" alt="Batik" />
-          <h3>Memahami Tentang Sejarah Batik Indonesia</h3>
-          <p>
-            Telusuri asal-usul batik dan bagaimana motifnya mencerminkan
-            filosofi lokal.
-          </p>
+      </section>
+
+      <!-- Cards -->
+      <section aria-labelledby="pesan-title">
+        <h2 id="pesan-title">Pesan Pakaian Terbaik Kami</h2>
+        <div class="cards" role="list">
+          <div class="card" role="listitem">
+            <i class="fa-solid fa-box-open" aria-hidden="true"></i> Pilih Item
+            Produk
+          </div>
+          <div class="card" role="listitem">
+            <i class="fa-brands fa-twitter" aria-hidden="true"></i> Pilih Sesuai
+            Kemauanmu
+          </div>
+          <div class="card" role="listitem">
+            <i class="fa-solid fa-comment-sms" aria-hidden="true"></i> Hubungi
+            Penjual
+          </div>
         </div>
-        <div class="artikel-item">
-          <img src="../images_gnrl/artikel/kebaya.jpg" alt="Kebaya" />
-          <h3>Sejarah Kebaya dan Jenis-jenisnya</h3>
-          <p>
-            Kebaya sebagai simbol keanggunan perempuan Indonesia dari masa ke
-            masa.
-          </p>
+      </section>
+
+      <!-- Artikel -->
+      <section class="artikel" id="about" aria-labelledby="artikel-title">
+        <h2 id="artikel-title">Artikel dan Pendidikan Budaya</h2>
+        <div class="grid-artikel">
+          <article class="artikel-item">
+            <img src="../images_gnrl/artikel/bodo.jpg" alt="Baju Bodo" />
+            <h3>Busana Tertua di Dunia: Baju Bodo Makassar</h3>
+            <p>
+              Mengenal sejarah dan keunikan Baju Bodo sebagai warisan budaya
+              tertua dari Makassar.
+            </p>
+          </article>
+
+          <article class="artikel-item">
+            <img src="../images_gnrl/artikel/batik_hero.jpg" alt="Batik" />
+            <h3>Memahami Tentang Sejarah Batik Indonesia</h3>
+            <p>
+              Telusuri asal-usul batik dan bagaimana motifnya mencerminkan
+              filosofi lokal.
+            </p>
+          </article>
+
+          <article class="artikel-item">
+            <img src="../images_gnrl/artikel/kebaya.jpg" alt="Kebaya" />
+            <h3>Sejarah Kebaya dan Jenis-jenisnya</h3>
+            <p>
+              Kebaya sebagai simbol keanggunan perempuan Indonesia dari masa ke
+              masa.
+            </p>
+          </article>
+
+          <article class="artikel-item">
+            <img src="../images_gnrl/artikel/ulos.jpg" alt="Ulos Batak" />
+            <h3>Ciri Khas Ulos Batak di Sumatera Utara</h3>
+            <p>
+              Makna mendalam di balik motif dan penggunaan kain Ulos dalam
+              tradisi Batak.
+            </p>
+          </article>
         </div>
-        <div class="artikel-item">
-          <img src="../images_gnrl/artikel/ulos.jpg" alt="Ulos Batak" />
-          <h3>Ciri Khas Ulos Batak di Sumatera Utara</h3>
-          <p>
-            Makna mendalam di balik motif dan penggunaan kain Ulos dalam tradisi
-            Batak.
-          </p>
+
+        <p style="margin-top: 24px; text-align: center">
+          <a class="btn" href="#artikel">Lihat Semua Artikel</a>
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-logo">
+            <img src="../images_gnrl/NADANE.png" alt="logo Nadane" />
+          </div>
+          <small>
+            Nadane hadir untuk melestarikan keindahan pakaian adat Nusantara.
+            Dengan katalog online dan media edukasi, kami mengajak Anda mengenal
+            dan mencintai warisan budaya Indonesia.
+          </small>
+        </div>
+
+        <div class="footer-col">
+          <h6>Navigasi Cepat</h6>
+          <a href="#home">Beranda</a>
+          <a href="#katalog">Katalog produk</a>
+          <a href="Login.html">Bergabung</a>
+          <a href="#about">Tentang kami</a>
+          <a href="#help">Bantuan</a>
+        </div>
+
+        <div class="footer-col">
+          <h6>Ikuti Kami</h6>
+          <a href="#"
+            ><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp</a
+          >
+          <a href="#"
+            ><i class="fab fa-telegram" aria-hidden="true"></i> Telegram</a
+          >
+          <a href="#"
+            ><i class="fab fa-instagram" aria-hidden="true"></i> Instagram</a
+          >
+          <a href="#"
+            ><i class="fab fa-facebook" aria-hidden="true"></i> Facebook</a
+          >
+        </div>
+
+        <div class="footer-col">
+          <h6>Kontak</h6>
+          <a href="tel:+6281234623303"
+            ><i class="fa-solid fa-phone" aria-hidden="true"></i> +62
+            812-3462-3303</a
+          >
+          <a href="mailto:nadane@gmail.com"
+            ><i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            nadane@gmail.com</a
+          >
         </div>
       </div>
-    </section>
 
-    <section>
-      <a href="#" class="btn">Lihat Semua Artikel</a>
-    </section>
-
-<footer class="site-footer">
-  <div class="footer-grid">
-
-    <!-- Kolom 1: Logo & deskripsi -->
-    <div class="footer-col">
-      <div class="footer-logo">
-        <img src="../images_gnrl/NADANE.png" alt="logo Nadane">
+      <div class="footer-bottom">
+        © 2025 Nadane. All rights reserved. &nbsp; | &nbsp;
+        <a href="#" class="muted-link">Syarat & Ketentuan</a> &nbsp; | &nbsp;
+        <a href="#" class="muted-link">Kebijakan Privasi</a>
       </div>
-      <small>
-        Nadane hadir untuk melestarikan keindahan pakaian adat Nusantara.
-        Dengan katalog online dan media edukasi, kami mengajak Anda mengenal dan mencintai warisan budaya Indonesia.
-      </small>
-    </div>
+    </footer>
 
-    <!-- Kolom 2: Navigasi cepat -->
-    <div class="footer-col">
-      <h6>Navigasi Cepat</h6>
-      <a href="#home">Beranda</a>
-      <a href="#search">Pencarian</a>
-      <a href="#katalog">Katalog produk</a>
-      <a href="#login">Bergabung</a>
-      <a href="#about">Tentang kami</a>
-      <a href="#seller">Jadi Penjual</a>
-      <a href="#help">Bantuan</a>
-    </div>
+    <!-- Script: toggle mobile menu -->
+    <script>
+      (function () {
+        const navToggle = document.getElementById("navToggle");
+        const nav = document.getElementById("primary-navigation");
 
-    <!-- Kolom 3: Ikuti Kami -->
-    <div class="footer-col">
-      <h6>Ikuti Kami</h6>
-      <a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-      <a href="#"><i class="fab fa-telegram"></i> Telegram</a>
-      <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
-      <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
-    </div>
+        // Set initial visibility based on width
+        function setInitial() {
+          if (window.innerWidth <= 900) {
+            nav.setAttribute("data-visible", "false");
+            navToggle.setAttribute("aria-expanded", "false");
+          } else {
+            nav.setAttribute("data-visible", "true");
+            navToggle.setAttribute("aria-expanded", "true");
+          }
+        }
+        setInitial();
 
-    <!-- Kolom 4: Kontak -->
-    <div class="footer-col">
-      <h6>Kontak</h6>
-      <a href="tel:+6281234623303"><i class="fa-solid fa-phone"></i> +6281234623303</a>
-      <a href="mailto:nadane@gmail.com"><i class="fa-solid fa-envelope"></i> Email: nadane@gmail.com</a>
-    </div>
-  </div>
+        navToggle.addEventListener("click", () => {
+          const visible = nav.getAttribute("data-visible") === "true";
+          nav.setAttribute("data-visible", String(!visible));
+          navToggle.setAttribute("aria-expanded", String(!visible));
+        });
 
-  <!-- Copyright -->
-  <div class="footer-bottom">
-    © 2025 Nadane. All rights reserved. &nbsp; | &nbsp;
-    <a style="text-decoration: none; color: #555;" href="#">Syarat & Ketentuan</a> &nbsp; | &nbsp;
-    <a style="text-decoration: none; color: #555;" href="#">Kebijakan Privasi</a>
-  </div>
-</footer>
+        // Close menu when clicking outside on mobile
+        document.addEventListener("click", (e) => {
+          if (window.innerWidth > 900) return;
+          const isClickInside =
+            nav.contains(e.target) || navToggle.contains(e.target);
+          if (!isClickInside) {
+            nav.setAttribute("data-visible", "false");
+            navToggle.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        // Update on resize
+        window.addEventListener("resize", () => {
+          setInitial();
+        });
+      })();
+    </script>
   </body>
 </html>

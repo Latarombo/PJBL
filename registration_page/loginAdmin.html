@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Masuk ke Nadane</title>
+    <title>Daftar ke Nadane</title>
     <link rel="stylesheet" href="login.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,85 +20,50 @@
   <body>
     <div class="container">
       <!-- Bagian kiri: logo -->
-      <div class="bagian-kiri">
-        <div class="logo-container">
-          <img src="../images_gnrl/NADANE.png" alt="Logo Nadane" />
-        </div>
+      <div class="logo-container">
+        <img src="../images_gnrl/NADANE.png" alt="Logo Nadane" />
       </div>
 
       <!-- Bagian kanan: form -->
-      <div class="bagian-kanan">
-        <div class="login-container">
-          <h2>Masuk ke Nadane</h2>
-          <p>
-            Gabung dengan kami untuk menjadi bagian dari komunitas dan nikmati
-            berbagai keuntungan.
-          </p>
+      <div class="login-container">
+        <h2>Masuk Ke Nadane</h2>
+        <p>Halo Admin, Selamat Datang</p>
 
-          <form id="loginForm">
-            <div class="form-group">
-              <label for="nama">Nama Lengkap</label>
-              <input
-                type="text"
-                id="nama"
-                name="nama"
-                placeholder="Masukkan nama"
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Masukkan email"
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="password">Kata Sandi</label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                placeholder="Masukkan kata sandi"
-              />
-            </div>
-
-            <div class="form-group">
-              <div class="label-kanan"><a href="#">Lupa kata sandi?</a></div>
-            </div>
-            <div class="form-group">
-              <button type="submit">Masuk</button>
-            </div>
-          </form>
-
-          <div class="login-options">
-            <small>atau masuk dengan</small>
-            <div class="social-icons">
-              <a href="#"
-                ><img
-                  src="../images_gnrl/registrasi/google.png"
-                  alt="Google_logo"
-              /></a>
-              <a href="#"
-                ><img
-                  src="../images_gnrl/registrasi/apple.png"
-                  alt="Apple_logo"
-              /></a>
-              <a href="#"
-                ><img
-                  src="../images_gnrl/registrasi/facebook.png"
-                  alt="Facebook_logo"
-              /></a>
-            </div>
+        <form id="loginForm" method="post" action="">
+          <div class="form-group">
+            <label for="nama">Nama Admin</label>
+            <input
+              type="text"
+              id="nama"
+              name="nama"
+              placeholder="Masukkan nama"
+            />
           </div>
 
-          <div class="register-link">
-            <p>Belum punya akun? <a href="#">Daftar sekarang</a></p>
+          <div class="form-group">
+            <label for="password">Kata Sandi</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Masukkan Kata Sandi"
+            />
           </div>
-        </div>
+
+          <div class="form-group" style="margin-bottom: 13px">
+            <label for="password">Konfirmasi Kata Sandi</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Silahkan Konfirmasi Kata Sandi"
+            />
+          </div>
+
+          <div class="form-group">
+            <button type="submit">Masuk</button>
+          </div>
+        </form>
       </div>
     </div>
   </body>

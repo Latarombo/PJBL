@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pusat Bantuan - Nadane</title>
+    <link rel="stylesheet" href="promosi.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <a href="homepage.html">
+          <img src="NADANE.png" alt="Logo NADANE" />
+        </a>
+      </div>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="homepage.html">Beranda</a></li>
+          <li><a href="Katalog.html">Katalog</a></li>
+          <li><a href="tentangkami.html">Tentang Kami</a></li>
+          <li><a href="Bantuan.html">Bantuan</a></li>
+        </ul>
+      </nav>
+
+      <!-- Ikon di kanan -->
+      <div class="nav-icons">
+        <img src="search.svg" alt="Cari" />
+        <button class="nav-button">Bergabung</button>
+        <img src="hamburger.svg" alt="Menu" class="menu-icon" />
+        <img src="garis.svg" alt="Menu" />
+        <img src="keranjang.svg" alt="Keranjang" />
+        <img src="profile.svg" alt="Profil" />
+      </div>
+    </header>
+
+    <script>
+      const menuIcon = document.querySelector(".nav-icons img.menu-icon");
+      const navMenu = document.querySelector(".nav-menu ul");
+
+      if (menuIcon && navMenu) {
+        menuIcon.addEventListener("click", () => {
+          navMenu.classList.toggle("active");
+        });
+      }
+    </script>
+
+    <!-- Main content -->
+    <main class="container">
+      <h1>Mulai sebagai penjual di Nadane</h1>
+      <p class="subtitle">
+        Hadirk<span style="display: none">an </span>koleksi terbaik pakaian adat
+        Nusantara anda untuk dikenal, dilestarikan, dan memberikan manfaat.
+      </p>
+
+      <div class="feature-box" aria-label="Keunggulan menjadi penjual Nadane">
+        <div class="feature-item" aria-label="Mendapat Sumber Penghasilan">
+          <div class="icon-circle" aria-hidden="true">Rp</div>
+          <h3>Mendapat Sumber Penghasilan</h3>
+          <p>
+            Jadikan koleksi pakaian adat anda menjadi sumber penghasilan anda,
+            jangkau ribuan orang agar minat dengan pakaian nusantara
+          </p>
+        </div>
+        <div class="feature-item" aria-label="Lestarikan Budaya Nusantara">
+          <div class="icon-circle" aria-hidden="true">&#127972;</div>
+          <h3>Lestarikan Budaya Nusantara</h3>
+          <p>
+            Setiap pakaian adat yang Anda jual membantu melestarikan warisan
+            budaya Nusantara agar tetap hidup dan dikenal generasi mendatang
+          </p>
+        </div>
+        <div class="feature-item" aria-label="Proses Mudah dan Aman">
+          <div class="icon-circle" aria-hidden="true">&#10003;</div>
+          <h3>Proses Mudah &amp; Aman</h3>
+          <p>
+            Kami menyediakan Platform yang mudah dan aman untuk melakukan
+            penjualan produk Pakaian Adat Nusantara
+          </p>
+        </div>
+      </div>
+
+      <p class="start-text">Siap untuk memulai? Klik tombol di bawah ini!</p>
+      <button class="start-button" type="button">Mulai Sebagai Penjual</button>
+    </main>
+
+    <footer class="site-footer" role="contentinfo" aria-label="Footer">
+      <div class="footer-grid">
+        <!-- Kolom 1: Logo & deskripsi -->
+        <div class="footer-col">
+          <div class="footer-logo">
+            <img src="NADANE.png" alt="logo Nadane" />
+          </div>
+          <small>
+            Nadane hadir untuk melestarikan keindahan pakaian adat Nusantara.
+            Dengan katalog online dan media edukasi, kami mengajak Anda mengenal
+            dan mencintai warisan budaya Indonesia.
+          </small>
+        </div>
+
+        <!-- Kolom 2: Navigasi cepat -->
+        <div class="footer-col">
+          <h6>Navigasi Cepat</h6>
+          <a href="homepage.html">Beranda</a>
+          <a href="search">Pencarian</a>
+          <a href="Katalog.html">Katalog produk</a>
+          <a href="Login.html">Bergabung</a>
+          <a href="tentangkami.html">Tentang kami</a>
+          <a href="seller">Jadi Penjual</a>
+          <a href="Bantuan.html">Bantuan</a>
+        </div>
+
+        <!-- Kolom 3: Ikuti Kami -->
+        <div class="footer-col">
+          <h6>Ikuti Kami</h6>
+          <a href="#"><img src="wa.svg" alt="WhatsApp" /> WhatsApp</a>
+          <a href="#"><img src="telegram.svg" alt="Telegram" /> Telegram</a>
+          <a href="#"><img src="instagram.svg" alt="Instagram" /> Instagram</a>
+          <a href="#"><img src="facebook.svg" alt="Facebook" /> Facebook</a>
+        </div>
+
+        <!-- Kolom 4: Kontak -->
+        <div class="footer-col">
+          <h6>Kontak</h6>
+          <a href="#"><img src="telepon.svg" alt="telepon" /> +6281234623303</a>
+          <a href="#"><img src="email.svg" alt="email" /> nadane@gmail.com</a>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-bottom">
+        © 2025 Nadane. All rights reserved. &nbsp; | &nbsp;
+        <a href="#">Syarat & Ketentuan</a> &nbsp; | &nbsp;
+        <a href="#">Kebijakan Privasi</a>
+      </div>
+    </footer>
+  </body>
+</html>

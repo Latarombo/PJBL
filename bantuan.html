@@ -1,70 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Batik Modern</title>
-      <link rel="stylesheet" href="detail.css" />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet"
-      />
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      />
-  </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Detail Produk – Nadane</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <header>
-      <div class="container_header">
-        <!-- logo sebelah kiri -->
-        <div class="logo">
-          <img src="../images_gnrl/NADANE.png" alt="Logo NADANE" />
-        </div>
-
-<!-- ini di pisah karena saat navigasi di gabung ukuran icon yang kanan menjadi kecil -->
-
-        <!-- navigasi 1 -->
-        <nav class="nav">
-            <ul>
-              <li><a href="#home" class="active">Beranda</a></li>
-              <li><a href="#katalog">Katalog</a></li>
-              <li><a href="#about">Tentang Kami</a></li>
-              <li><a href="#help">Bantuan</a></li>
-            </ul>
-
-          <!-- navigasi 2: search, gabung, cart, profile -->
-          <div class="nav2">
-
-            <button class="icon-btn">
-              <img src="../images_gnrl/icon/search.svg" alt="search_icon" />
-            </button>
-
-            <button class="btn-bergabung"> 
-              Bergabung
-            </button>
-
-            <div class="pipe">
-              <img src="../images_gnrl/icon/pipe1.svg" alt="profile_icon" />
-            </div>
-
-            <button class="icon-btn">
-              <img src="../images_gnrl/icon/cart.svg" alt="cart_icon" />
-            </button>
-
-            <button class="icon-btn">
-              <img src="../images_gnrl/icon/profile.svg" alt="profile_icon" />
-            </button>
-
-          </div>
-        </nav>
-      </div>
-    </header>
-    <main class="container">
-      <!-- Produk -->
+    <!-- Produk -->
     <section class="product-page">
       <!-- Wrapper Gambar -->
       <div class="image-wrapper">
@@ -171,58 +117,7 @@
         <li>Laundry: dianjurkan cuci tangan, hindari pemutih</li>
       </ul>
     </section>
-    </main>
-<!-- footer -->
-<footer class="site-footer" role="contentinfo" aria-label="Footer">
-  <div class="footer-grid">
 
-    <!-- Kolom 1: Logo & deskripsi -->
-    <div class="footer-col">
-      <div class="footer-logo">
-        <img src="NADANE.png" alt="logo Nadane">
-      </div>
-      <small>
-        Nadane hadir untuk melestarikan keindahan pakaian adat Nusantara.
-        Dengan katalog online dan media edukasi, kami mengajak Anda mengenal dan mencintai warisan budaya Indonesia.
-      </small>
-    </div>
-
-    <!-- Kolom 2: Navigasi cepat -->
-    <div class="footer-col">
-      <h6>Navigasi Cepat</h6>
-      <a href="homepage.html">Beranda</a>
-      <a href="search">Pencarian</a>
-      <a href="Katalog.html">Katalog produk</a>
-      <a href="Login.html">Bergabung</a>
-      <a href="tentangkami.html">Tentang kami</a>
-      <a href="seller">Jadi Penjual</a>
-      <a href="Bantuan.html">Bantuan</a>
-    </div>
-
-    <!-- Kolom 3: Ikuti Kami -->
-    <div class="footer-col">
-      <h6>Ikuti Kami</h6>
-      <a href="#"><img src="wa.svg" alt="WhatsApp"> WhatsApp</a>
-      <a href="#"><img src="telegram.svg" alt="Telegram"> Telegram</a>
-      <a href="#"><img src="instagram.svg" alt="Instagram"> Instagram</a>
-      <a href="#"><img src="facebook.svg" alt="Facebook"> Facebook</a>
-    </div>
-
-    <!-- Kolom 4: Kontak -->
-    <div class="footer-col">
-      <h6>Kontak</h6>
-      <a href="#"><img src="telepon.svg" alt="telepon"> +6281234623303</a>
-      <a href="#"><img src="email.svg" alt="email"> nadane@gmail.com</a>
-    </div>
-  </div>
-
-  <!-- Copyright -->
-  <div class="footer-bottom">
-    © 2025 Nadane. All rights reserved. &nbsp; | &nbsp;
-    <a href="#">Syarat & Ketentuan</a> &nbsp; | &nbsp;
-    <a href="#">Kebijakan Privasi</a>
-  </div>
-  </footer>
     <script>
       // Script ganti gambar utama dari klik thumbnail
       const thumbnails = document.querySelectorAll(".thumbnail-list img");
