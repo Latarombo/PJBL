@@ -1,0 +1,166 @@
+:root {
+  --bg: #fff;
+  --color-title: #9a3b3b;
+  --color: #111827;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins";
+  background-color: var(--bg);
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 0 20px;
+  gap: 40px;
+}
+
+/* Gambar */
+.gambar {
+  padding-bottom: 20px;
+}
+
+/* Title */
+.title h2 {
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--color-title);
+}
+
+/* Subtitle */
+.sub-judul p {
+  color: var(--color);
+  font-size: 18px;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* Button Wrapper */
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Button 1 */
+.btn1 button {
+  background: #b04545;
+  color: white;
+  padding: 12px 50px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+/* Button 2 – versi secondary*/
+.btn2 button {
+  background: #f9f4e4;
+  color: var(--color);
+  padding: 12px 50px;
+  border: 1px solid #d9d9d9;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+/* Hover */
+button:hover {
+  background-color: #c74f4f;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Hover – versi secondary */
+.btn2 button:hover {
+  background-color: #f0e9d3;
+  border-color: #c4c4c4;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* Responsive — Tablet and Mobile */
+@media (max-width: 992px) {
+  .title h2 {
+    font-size: 34px;
+  }
+
+  .sub-judul p {
+    font-size: 16px;
+    max-width: 520px;
+  }
+
+  .btn-group {
+    max-width: 360px;
+    gap: 16px;
+  }
+
+  .btn1 button,
+  .btn2 button {
+    padding: 12px 40px;
+    font-size: 14px;
+  }
+
+  section {
+    padding: 40px 16px;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title h2 {
+    font-size: 21px;
+  }
+
+  .sub-judul p {
+    font-size: 15px;
+    max-width: 360px;
+  }
+
+  .btn-group {
+    max-width: 300px;
+  }
+
+  .btn1 button,
+  .btn2 button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 12px;
+  }
+
+  .gambar {
+    padding-bottom: 12px;
+  }
+
+  section {
+    min-height: 70vh;
+    padding: 20px 12px;
+    gap: 20px;
+  }
+}
