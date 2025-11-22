@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login ke Nadane</title>
+    <link rel="stylesheet" href="login.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Bagian kiri: logo -->
+      <div class="logo-container">
+        <img src="../images_gnrl/NADANE.png" alt="Logo Nadane" />
+      </div>
+
+      <!-- Bagian kanan: form -->
+      <div class="login-container">
+        <h2>Masuk Ke Nadane</h2>
+        <p>Halo Admin, Selamat Datang</p>
+
+        <form id="loginForm" method="post" action="">
+          <div class="form-group">
+            <label for="nama">Nama Admin</label>
+            <input
+              type="text"
+              id="nama"
+              name="nama"
+              placeholder="Masukkan nama"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Kata Sandi</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Masukkan Kata Sandi"
+            />
+          </div>
+
+          <div class="form-group" style="margin-bottom: 13px">
+            <label for="password">Konfirmasi Kata Sandi</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Silahkan Konfirmasi Kata Sandi"
+            />
+          </div>
+
+          <div class="form-group">
+            <button type="submit">Masuk</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
