@@ -1,215 +1,359 @@
 <!DOCTYPE html>
 <html lang="id">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Manajemen Pengguna</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            background-color: #fff;
-        }
-
-        /* Sidebar */
-        .sidebar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 240px;
-            height: 100vh;
-            background-color: #EEF2F5;
-            color: black;
-            padding: 30px 20px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .sidebar h2 {
-            font-size: 18px;
-            margin-bottom: 15px;
-            /* lebih rapat */
-            font-weight: 400;
-        }
-
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .sidebar ul li {
-            margin: 10px 0;
-            font-weight: 700;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 8px 12px;
-            border-radius: 8px;
-            transition: background-color 0.2s ease;
-        }
-
-        .sidebar ul li a {
-            color: black;
-            text-decoration: none;
-        }
-
-        .sidebar .active {
-            background-color: #FFD700;
-            font-weight: 600;
-        }
-
-        .sidebar ul li img {
-            width: 20px;
-            height: 20px;
-        }
-
-        /* khusus analitik */
-        .sidebar ul li.analitik {
-            margin-top: auto;
-            font-size: 14px;
-        }
-
-        .sidebar ul li.analitik img {
-            width: 16px;
-            height: 16px;
-        }
-
-        /* Main content */
-        .main {
-            margin-left: 260px;
-            padding: 30px;
-        }
-
-        .main h1 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            font-weight: 400;
-        }
-
-        /* Search bar */
-        .search-bar {
-            position: relative;
-            width: 100%;
-            max-width: 700px;
-            margin-bottom: 30px;
-        }
-
-        .search-bar input {
-            width: 100%;
-            padding: 12px 16px 12px 44px;
-            border: 1px solid #767676;
-            font-size: 15px;
-            background-color: #F9FAFB;
-        }
-
-        .search-bar .search-icon {
-            position: absolute;
-            left: 14px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 20px;
-            height: 20px;
-            transition: opacity 0.2s ease;
-        }
-
-        .search-bar input:focus~.search-icon {
-            opacity: 0;
-        }
-
-        /* Summary boxes */
-        .summary {
-            display: flex;
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .summary-box {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            flex: 1;
-            border: 1px solid #633636;
-        }
-
-        .summary-box h3 {
-            font-size: 16px;
-            color: #000;
-            margin-bottom: 10px;
-            font-weight: 400;
-        }
-
-        .summary-box p {
-            font-size: 24px;
-            font-weight: 800;
-            color: #000;
-        }
-
-        /* Quick navigation as boxes */
-        .quick-nav {
-            display: flex;
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-    </style>
-
-<body>
-    <!-- Sidebar -->
+    <title>Produk Saya - Nadane Store</title>
+    <link rel="stylesheet" href="manajemen.css" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="sidebar">
-        <h2>Admin Nadane</h2>
-        <ul>
-            <li data-page="beranda"><img src="beranda.svg" alt="Home"><a href="dashboardAdmin.html">Beranda Dasbor</a>
-            </li>
-            <li data-page="produk"><img src="paket.svg" alt="Produk"><a href="manajemenProduk.html">Manajemen Produk</a>
-            </li>
-            <li data-page="pengguna"><img src="orang.svg" alt="Pengguna"><a href="manajemenPengguna.html">Manajemen
-                    Pengguna</a></li>
-            <li data-page="active"><img src="kertas.svg" alt="Konten"><a href="manajemenKonten.html">Manajemen
-                    Konten</a></li>
-            <li class="analitik" data-page="analitik"><img src="tv.svg" alt="Analitik"><a
-                    href="analitik.html">Analitik</a></li>
-        </ul>
+      <div class="logo">
+        <img src="../images_gnrl/NADANE.png" alt="Logo Nadane" />
+      </div>
+      <nav class="menu">
+        <a href="beranda.html" class="menu-item">
+          <img
+            src="../images_gnrl/icon/beranda.svg"
+            alt="Home"
+            style="opacity: 80%"
+          />
+          <span>Beranda Dasbor</span>
+        </a>
+        <a href="#" class="menu-item active">
+          <img src="../images_gnrl/icon/Box.svg" alt="My Product" />
+          <span>Produk Saya</span>
+        </a>
+        <a href="#" class="menu-item">
+          <img src="../images_gnrl/icon/cart(24).png" alt="Pesanan" />
+          <span>Pesanan</span>
+        </a>
+      </nav>
+      <a href="#" class="logout">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill="currentColor"
+            d="M3 2.75C3 1.784 3.784 1 4.75 1h6.5c.966 0 1.75.784 1.75 1.75v3.457A5.5 5.5 0 0 0 7.257 15H4.75A1.75 1.75 0 0 1 3 13.25zM6 9a1 1 0 1 0 0-2a1 1 0 0 0 0 2m5.5 7a4.5 4.5 0 1 0 0-9a4.5 4.5 0 0 0 0 9m.354-2.146a.5.5 0 0 1-.708-.708L12.293 12H9.5a.5.5 0 0 1 0-1h2.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 .146.351v.006a.5.5 0 0 1-.144.348l-.003.003z"
+          />
+        </svg>
+        <span>Log Out</span>
+      </a>
     </div>
 
-    <script>
-        // Ambil semua item sidebar
-        const sidebarItems = document.querySelectorAll('.sidebar ul li');
+    <div class="main-content">
+      <div class="header">
+        <div class="header-title">
+          <h1>Produk Saya</h1>
+          <p>Kelola semua produk yang Anda jual di sini.</p>
+        </div>
+        <button class="add-product-btn">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              fill-rule="evenodd"
+              d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          Tambah Produk Baru
+        </button>
+      </div>
 
-        // Fungsi untuk mengubah active (meskipun href akan navigasi, ini untuk efek visual jika diperlukan)
-        function changeActive(page) {
-            // Hapus class active dari semua item
-            sidebarItems.forEach(item => item.classList.remove('active'));
+      <div class="search-filter-container">
+        <div class="search-bar">
+          <svg
+            width="20"
+            height="20"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            class="search-icon"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <input type="text" placeholder="Cari nama produk..." />
+        </div>
+        <button class="filter-btn">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              fill-rule="evenodd"
+              d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          Filter
+        </button>
+      </div>
 
-            // Tambahkan class active ke item yang sesuai
-            const activeItem = document.querySelector(`.sidebar ul li[data-page="${page}"]`);
-            if (activeItem) {
-                activeItem.classList.add('active');
-            }
-        }
-
-        const currentPage = window.location.pathname.split("/").pop();
-        sidebarItems.forEach(item => {
-            const link = item.querySelector('a');
-            if (link && link.getAttribute('href') === currentPage) {
-                item.classList.add('active');
-            }
-        });
-
-
-        // Jika ingin klik mengubah active tanpa navigasi (opsional, karena href akan redirect)
-        sidebarItems.forEach(item => {
-            const link = item.querySelector('a');
-            link.addEventListener('click', () => {
-                sidebarItems.forEach(i => i.classList.remove('active'));
-                item.classList.add('active');
-            });
-        });
-    </script>
-</body>
-
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>PRODUK</th>
+              <th>HARGA</th>
+              <th>STOK</th>
+              <th>STATUS</th>
+              <th>AKSI</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="product-info">
+                  <div class="product-image">
+                    <img
+                      src="https://images.unsplash.com/photo-1578500494198-246f612d3b3d?w=80&h=80&fit=crop"
+                      alt="Vas Keramik Modern"
+                    />
+                  </div>
+                  <span class="product-name">Vas Keramik Modern</span>
+                </div>
+              </td>
+              <td>Rp 250.000</td>
+              <td>15</td>
+              <td>
+                <span class="status-badge status-aktif">Aktif</span>
+              </td>
+              <td>
+                <div class="action-buttons">
+                  <button class="btn-edit">
+                    <svg
+                      width="18"
+                      height="18"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"
+                      />
+                    </svg>
+                  </button>
+                  <button class="btn-delete">
+                    <svg
+                      width="18"
+                      height="18"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="product-info">
+                  <div class="product-image">
+                    <img
+                      src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=80&h=80&fit=crop"
+                      alt="Lampu Meja Kayu"
+                    />
+                  </div>
+                  <span class="product-name">Lampu Meja Kayu</span>
+                </div>
+              </td>
+              <td>Rp 450.000</td>
+              <td>8</td>
+              <td>
+                <span class="status-badge status-aktif">Aktif</span>
+              </td>
+              <td>
+                <div class="action-buttons">
+                  <button class="btn-edit">
+                    <svg
+                      width="18"
+                      height="18"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"
+                      />
+                    </svg>
+                  </button>
+                  <button class="btn-delete">
+                    <svg
+                      width="18"
+                      height="18"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="product-info">
+                  <div class="product-image">
+                    <img
+                      src="https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=80&h=80&fit=crop"
+                      alt="Hiasan Dinding Abstrak"
+                    />
+                  </div>
+                  <span class="product-name">Hiasan Dinding Abstrak</span>
+                </div>
+              </td>
+              <td>Rp 780.000</td>
+              <td>0</td>
+              <td>
+                <span class="status-badge status-tidak-aktif">Tidak Aktif</span>
+              </td>
+              <td>
+                <div class="action-buttons">
+                  <button class="btn-edit">
+                    <svg
+                      width="18"
+                      height="18"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"
+                      />
+                    </svg>
+                  </button>
+                  <button class="btn-delete">
+                    <svg
+                      width="18"
+                      height="18"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="product-info">
+                  <div class="product-image">
+                    <img
+                      src="https://images.unsplash.com/photo-1602874801006-e04b1747d278?w=80&h=80&fit=crop"
+                      alt="Lilin Aromaterapi"
+                    />
+                  </div>
+                  <span class="product-name">Lilin Aromaterapi</span>
+                </div>
+              </td>
+              <td>Rp 120.000</td>
+              <td>32</td>
+              <td>
+                <span class="status-badge status-aktif">Aktif</span>
+              </td>
+              <td>
+                <div class="action-buttons">
+                  <button class="btn-edit">
+                    <svg
+                      width="18"
+                      height="18"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"
+                      />
+                    </svg>
+                  </button>
+                  <button class="btn-delete">
+                    <svg
+                      width="18"
+                      height="18"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="product-info">
+                  <div class="product-image">
+                    <img
+                      src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=80&h=80&fit=crop"
+                      alt="Set Piring Keramik"
+                    />
+                  </div>
+                  <span class="product-name">Set Piring Keramik</span>
+                </div>
+              </td>
+              <td>Rp 350.000</td>
+              <td>20</td>
+              <td>
+                <span class="status-badge status-draf">Draf</span>
+              </td>
+              <td>
+                <div class="action-buttons">
+                  <button class="btn-edit">
+                    <svg
+                      width="18"
+                      height="18"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"
+                      />
+                    </svg>
+                  </button>
+                  <button class="btn-delete">
+                    <svg
+                      width="18"
+                      height="18"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
 </html>

@@ -122,16 +122,36 @@ body {
   background-color: #e6c76a;
 }
 
-.search-bar {
+.search-filter-container {
+  display: flex;
+  gap: 15px;
   margin-bottom: 30px;
+}
+
+.search-bar {
+  flex: 1;
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
 }
 
 .search-bar input {
   width: 100%;
-  padding: 15px 20px;
+  padding: 15px 20px 15px 45px;
   border: 1px solid #ddd;
   border-radius: 8px;
   font-size: 14px;
+  background-color: white;
+}
+
+.search-bar input::placeholder {
+  color: #999;
 }
 
 .stats-grid {
