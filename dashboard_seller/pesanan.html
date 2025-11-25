@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pesanan - Nadane Store</title>
+    <link rel="stylesheet" href="pesanan.css" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="sidebar" id="sidebar">
+      <div class="logo">
+        <img src="../images_gnrl/NADANE.png" alt="Logo Nadane" />
+      </div>
+      <nav class="menu">
+        <a href="beranda.html" class="menu-item">
+          <img
+            src="../images_gnrl/icon/beranda.svg"
+            alt="Home"
+            style="opacity: 80%"
+          />
+          <span>Beranda Dasbor</span>
+        </a>
+        <a href="manajemen.html" class="menu-item">
+          <img src="../images_gnrl/icon/Box.svg" alt="My Product" />
+          <span>Produk Saya</span>
+        </a>
+        <a href="#" class="menu-item active">
+          <img src="../images_gnrl/icon/cart(24).png" alt="Pesanan" />
+          <span>Pesanan</span>
+        </a>
+      </nav>
+      <a href="#" class="logout">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill="currentColor"
+            d="M3 2.75C3 1.784 3.784 1 4.75 1h6.5c.966 0 1.75.784 1.75 1.75v3.457A5.5 5.5 0 0 0 7.257 15H4.75A1.75 1.75 0 0 1 3 13.25zM6 9a1 1 0 1 0 0-2a1 1 0 0 0 0 2m5.5 7a4.5 4.5 0 1 0 0-9a4.5 4.5 0 0 0 0 9m.354-2.146a.5.5 0 0 1-.708-.708L12.293 12H9.5a.5.5 0 0 1 0-1h2.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 .146.351v.006a.5.5 0 0 1-.144.348l-.003.003z"
+          />
+        </svg>
+        <span>Log Out</span>
+      </a>
+    </div>
+
+    <div class="main-content">
+      <div class="header">
+        <div class="header-title">
+          <h1>Pesanan</h1>
+          <p>Kelola semua pesanan toko Anda di sini.</p>
+        </div>
+        <button class="add-product-btn">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              fill-rule="evenodd"
+              d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          Tambah Produk Baru
+        </button>
+      </div>
+
+      <div class="search-filter-container">
+        <div class="search-bar">
+          <svg
+            width="20"
+            height="20"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            class="search-icon"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <input type="text" placeholder="Cari nama produk..." />
+        </div>
+        <button class="filter-btn">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              fill-rule="evenodd"
+              d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          Filter
+        </button>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>ID PESANAN</th>
+              <th>NAMA PELANGGAN</th>
+              <th>TANGGAL</th>
+              <th>STATUS</th>
+              <th>TOTAL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#NDN-1209</td>
+              <td>Rina Hartono</td>
+              <td>15 Nov 2023</td>
+              <td>
+                <span class="status-badge status-terbaru">Terbaru</span>
+              </td>
+              <td>Rp 250.000</td>
+            </tr>
+            <tr>
+              <td>#NDN-1208</td>
+              <td>Ahmad Fauzi</td>
+              <td>14 Nov 2023</td>
+              <td>
+                <span class="status-badge status-diproses">Diproses</span>
+              </td>
+              <td>Rp 1.150.000</td>
+            </tr>
+            <tr>
+              <td>#NDN-1207</td>
+              <td>Siti Aminah</td>
+              <td>14 Nov 2023</td>
+              <td>
+                <span class="status-badge status-terkirim">Terkirim</span>
+              </td>
+              <td>Rp 80.000</td>
+            </tr>
+            <tr>
+              <td>#NDN-1206</td>
+              <td>Fajar Nugroho</td>
+              <td>13 Nov 2023</td>
+              <td>
+                <span class="status-badge status-dibatalkan">Dibatalkan</span>
+              </td>
+              <td>Rp 300.000</td>
+            </tr>
+            <tr>
+              <td>#NDN-1205</td>
+              <td>Maya Sari</td>
+              <td>13 Nov 2023</td>
+              <td>
+                <span class="status-badge status-terkirim">Terkirim</span>
+              </td>
+              <td>Rp 620.000</td>
+            </tr>
+            <tr>
+              <td>#NDN-1204</td>
+              <td>Heru Prasetyo</td>
+              <td>12 Nov 2023</td>
+              <td>
+                <span class="status-badge status-menunggu"
+                  >Menunggu Pembayaran</span
+                >
+              </td>
+              <td>Rp 95.000</td>
+            </tr>
+            <tr>
+              <td>#NDN-1203</td>
+              <td>Budi Santoso</td>
+              <td>12 Nov 2023</td>
+              <td>
+                <span class="status-badge status-terkirim">Terkirim</span>
+              </td>
+              <td>Rp 450.000</td>
+            </tr>
+            <tr>
+              <td>#NDN-1202</td>
+              <td>Citra Lestari</td>
+              <td>11 Nov 2023</td>
+              <td>
+                <span class="status-badge status-diproses">Diproses</span>
+              </td>
+              <td>Rp 780.000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script>
+      // Tambahkan script ini di akhir HTML sebelum </body>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.getElementById("hamburger");
+        const sidebar = document.getElementById("sidebar");
+
+        // Buat overlay element
+        const overlay = document.createElement("div");
+        overlay.className = "sidebar-overlay";
+        document.body.appendChild(overlay);
+
+        if (hamburger && sidebar) {
+          // Toggle sidebar saat hamburger diklik
+          hamburger.addEventListener("click", function (e) {
+            e.stopPropagation();
+
+            // Toggle class active
+            sidebar.classList.toggle("active");
+            hamburger.classList.toggle("active");
+            overlay.classList.toggle("active");
+
+            // Prevent body scroll saat sidebar terbuka
+            if (sidebar.classList.contains("active")) {
+              document.body.style.overflow = "hidden";
+            } else {
+              document.body.style.overflow = "";
+            }
+          });
+
+          // Close sidebar saat klik overlay
+          overlay.addEventListener("click", function () {
+            sidebar.classList.remove("active");
+            hamburger.classList.remove("active");
+            overlay.classList.remove("active");
+            document.body.style.overflow = "";
+          });
+
+          // Close sidebar saat klik di luar (opsional, karena sudah ada overlay)
+          document.addEventListener("click", function (event) {
+            const isClickInsideSidebar = sidebar.contains(event.target);
+            const isClickOnHamburger = hamburger.contains(event.target);
+
+            if (
+              !isClickInsideSidebar &&
+              !isClickOnHamburger &&
+              sidebar.classList.contains("active")
+            ) {
+              sidebar.classList.remove("active");
+              hamburger.classList.remove("active");
+              overlay.classList.remove("active");
+              document.body.style.overflow = "";
+            }
+          });
+
+          // Close sidebar saat window resize ke desktop
+          window.addEventListener("resize", function () {
+            if (window.innerWidth > 768) {
+              sidebar.classList.remove("active");
+              hamburger.classList.remove("active");
+              overlay.classList.remove("active");
+              document.body.style.overflow = "";
+            }
+          });
+
+          // Smooth scroll ke top saat refresh (opsional)
+          window.addEventListener("beforeunload", function () {
+            window.scrollTo(0, 0);
+          });
+        } else {
+          console.error("Hamburger atau Sidebar tidak ditemukan!");
+        }
+      });
+    </script>
+  </body>
+</html>

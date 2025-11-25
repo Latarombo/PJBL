@@ -9,6 +9,64 @@ body {
   background-color: #fff;
   display: flex;
   min-height: 100vh;
+  overflow-x: hidden; /* Prevent horizontal scroll pada body */
+}
+
+html {
+  overflow-x: hidden; /* Prevent horizontal scroll pada html */
+}
+
+/* Hamburger Menu - Sticky saat scroll */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
+  background-color: #f4d579;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.hamburger:hover {
+  background-color: #e6c76a;
+  transform: scale(1.05);
+}
+
+.hamburger:active {
+  transform: scale(0.95);
+}
+
+.hamburger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: #5a4a2a;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* Animasi hamburger saat sidebar aktif */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 .sidebar {
@@ -19,6 +77,11 @@ body {
   flex-direction: column;
   position: fixed;
   height: 100vh;
+  left: 0;
+  top: 0;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -85,6 +148,9 @@ body {
   flex: 1;
   margin-left: 300px;
   padding: 40px;
+  transition: margin-left 0.3s ease;
+  max-width: 100%; /* Prevent overflow */
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 .header {
@@ -92,12 +158,14 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
+  gap: 20px;
 }
 
 .header-title h1 {
   font-size: 32px;
   color: #2c2c2c;
   margin-bottom: 5px;
+  word-wrap: break-word; /* Break long words */
 }
 
 .header-title p {
@@ -116,6 +184,8 @@ body {
   cursor: pointer;
   font-weight: 600;
   font-size: 14px;
+  white-space: nowrap;
+  flex-shrink: 0; /* Prevent button shrinking */
 }
 
 .add-product-btn:hover {
@@ -131,6 +201,7 @@ body {
 .search-bar {
   flex: 1;
   position: relative;
+  min-width: 0; /* Allow flex item to shrink */
 }
 
 .search-icon {
@@ -166,12 +237,14 @@ body {
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  min-width: 0; /* Prevent overflow */
 }
 
 .stat-label {
   color: #888;
   font-size: 14px;
   margin-bottom: 10px;
+  word-wrap: break-word;
 }
 
 .stat-value {
@@ -179,6 +252,7 @@ body {
   font-weight: 700;
   color: #2c2c2c;
   margin-bottom: 8px;
+  word-wrap: break-word;
 }
 
 .stat-change {
@@ -206,6 +280,7 @@ body {
   display: flex;
   gap: 30px;
   margin-bottom: 20px;
+  background: #fff;
   border-bottom: 2px solid #eee;
 }
 
@@ -215,6 +290,8 @@ body {
   cursor: pointer;
   border-bottom: 3px solid transparent;
   margin-bottom: -2px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .tab.active {
@@ -236,16 +313,41 @@ body {
   margin-top: -50px;
 }
 
+/* Table Container - HANYA INI YANG BISA SCROLL HORIZONTAL */
 .table-container {
   background: white;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow-x: auto; /* Enable horizontal scroll HANYA untuk table */
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling di iOS */
+  max-width: 100%; /* Prevent container overflow */
+}
+
+/* Custom scrollbar untuk table */
+.table-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 0 0 12px 12px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #d4d4d4;
+  border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background: #b4b4b4;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
+  min-width: 600px; /* Minimum width untuk memicu scroll */
 }
 
 thead {
@@ -260,6 +362,7 @@ th {
   color: #5a4a2a;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  white-space: nowrap; /* Prevent text wrapping di header */
 }
 
 td {
@@ -278,6 +381,7 @@ tbody tr:hover {
   font-size: 12px;
   font-weight: 600;
   display: inline-block;
+  white-space: nowrap;
 }
 
 .status-terkirim {
@@ -298,4 +402,179 @@ tbody tr:hover {
 .status-dibatalkan {
   background-color: #fee2e2;
   color: #dc2626;
+}
+
+/* Responsive*/
+
+/* Tablet (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .header-title h1 {
+    font-size: 28px;
+  }
+
+  .main-content {
+    padding: 30px 20px;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 80px 20px 20px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .header-title h1 {
+    font-size: 24px;
+  }
+
+  .header-title p {
+    font-size: 13px;
+  }
+
+  .add-product-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .search-filter-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .filter-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+
+  .stat-value {
+    font-size: 28px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .tabs {
+    gap: 20px;
+  }
+
+  .filter-btn {
+    float: none;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+
+  /* Table container full width di mobile */
+  .table-container {
+    margin: 0 -20px; /* Extend ke edge */
+    border-radius: 0;
+    width: calc(100% + 40px); /* Compensate for negative margin */
+  }
+
+  th,
+  td {
+    padding: 12px 10px;
+    font-size: 12px;
+  }
+
+  .status-badge {
+    padding: 4px 10px;
+    font-size: 11px;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .main-content {
+    padding: 70px 15px 15px;
+  }
+
+  .header-title h1 {
+    font-size: 20px;
+  }
+
+  .stat-card {
+    padding: 20px;
+  }
+
+  .stat-label {
+    font-size: 12px;
+  }
+
+  .stat-value {
+    font-size: 24px;
+  }
+
+  .add-product-btn {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+
+  /* Table di small mobile */
+  .table-container {
+    margin: 0 -15px;
+    width: calc(100% + 30px);
+  }
+
+  th,
+  td {
+    padding: 10px 8px;
+    font-size: 11px;
+  }
+
+  /* Make table more compact di small screens */
+  table {
+    min-width: 500px; /* Reduce minimum width */
+  }
+}
+
+/* Overlay untuk mobile */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar-overlay.active {
+    display: block;
+    opacity: 1;
+  }
 }

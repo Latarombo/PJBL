@@ -14,7 +14,12 @@
     />
   </head>
   <body>
-    <div class="sidebar">
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="sidebar" id="sidebar">
       <div class="logo">
         <img src="../images_gnrl/NADANE.png" alt="Logo Nadane" />
       </div>
@@ -27,7 +32,7 @@
           <img src="../images_gnrl/icon/Box.svg" alt="My Product" />
           <span>Produk Saya</span>
         </a>
-        <a href="" class="menu-item">
+        <a href="pesanan.html" class="menu-item">
           <img src="../images_gnrl/icon/cart(24).png" alt="Pesanan" />
           <span>Pesanan</span>
         </a>
@@ -188,5 +193,79 @@
         </table>
       </div>
     </div>
+
+    <script>
+      // Tambahkan script ini di akhir HTML sebelum </body>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.getElementById("hamburger");
+        const sidebar = document.getElementById("sidebar");
+
+        // Buat overlay element
+        const overlay = document.createElement("div");
+        overlay.className = "sidebar-overlay";
+        document.body.appendChild(overlay);
+
+        if (hamburger && sidebar) {
+          // Toggle sidebar saat hamburger diklik
+          hamburger.addEventListener("click", function (e) {
+            e.stopPropagation();
+
+            // Toggle class active
+            sidebar.classList.toggle("active");
+            hamburger.classList.toggle("active");
+            overlay.classList.toggle("active");
+
+            // Prevent body scroll saat sidebar terbuka
+            if (sidebar.classList.contains("active")) {
+              document.body.style.overflow = "hidden";
+            } else {
+              document.body.style.overflow = "";
+            }
+          });
+
+          // Close sidebar saat klik overlay
+          overlay.addEventListener("click", function () {
+            sidebar.classList.remove("active");
+            hamburger.classList.remove("active");
+            overlay.classList.remove("active");
+            document.body.style.overflow = "";
+          });
+
+          // Close sidebar saat klik di luar (opsional, karena sudah ada overlay)
+          document.addEventListener("click", function (event) {
+            const isClickInsideSidebar = sidebar.contains(event.target);
+            const isClickOnHamburger = hamburger.contains(event.target);
+
+            if (
+              !isClickInsideSidebar &&
+              !isClickOnHamburger &&
+              sidebar.classList.contains("active")
+            ) {
+              sidebar.classList.remove("active");
+              hamburger.classList.remove("active");
+              overlay.classList.remove("active");
+              document.body.style.overflow = "";
+            }
+          });
+
+          // Close sidebar saat window resize ke desktop
+          window.addEventListener("resize", function () {
+            if (window.innerWidth > 768) {
+              sidebar.classList.remove("active");
+              hamburger.classList.remove("active");
+              overlay.classList.remove("active");
+              document.body.style.overflow = "";
+            }
+          });
+
+          // Smooth scroll ke top saat refresh (opsional)
+          window.addEventListener("beforeunload", function () {
+            window.scrollTo(0, 0);
+          });
+        } else {
+          console.error("Hamburger atau Sidebar tidak ditemukan!");
+        }
+      });
+    </script>
   </body>
 </html>
