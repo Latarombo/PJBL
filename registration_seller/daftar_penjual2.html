@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masuk ke Nadane</title>
+    <link rel="stylesheet" href="daftar_penjual2.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- HEADER -->
+
+    <!-- Konten -->
+    <section class="container">
+      <div class="form-card">
+        <h1 class="form-title">Daftar Sebagai Penjual</h1>
+        <p class="form-subtitle">
+          Daftarkan diri Anda sebagai penjual dan hadirkan<br />
+          koleksi terbaik pakaian adat Nusantara.
+        </p>
+
+        <form id="storeForm" method="post" action="daftar_penjual3.html">
+          <div class="form-group">
+            <label for="storeName">Nama toko</label>
+            <input
+              type="text"
+              id="storeName"
+              name="storeName"
+              placeholder="Masukkan nama toko anda"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="address">Alamat</label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              placeholder="Masukkan nama toko anda"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="description">Deskripsi toko</label>
+            <textarea
+              id="description"
+              name="description"
+              placeholder="Berikan deskripsi tentang toko anda"
+              required
+            ></textarea>
+          </div>
+
+          <div class="terms-section">
+            <h3>Syarat dan Ketentuan</h3>
+            <div class="terms-box" id="termsBox">
+              <p class="terms-intro">
+                Selamat datang di Nadane! Sebelum Anda mendaftar sebagai
+                penjual, harap baca dan pahami Syarat dan Ketentuan berikut.
+              </p>
+
+              <p class="terms-title">Syarat & Ketentuan Penjual</p>
+
+              <ol class="terms-list">
+                <li>
+                  Data yang diberikan harus benar dan dapat dihubungi (email &
+                  nomor telepon aktif).
+                </li>
+                <li>
+                  Produk yang dijual harus berkaitan dengan pakaian adat atau
+                  kategori yang sesuai dengan tema platform.
+                </li>
+                <li>
+                  Penjual wajib memberikan deskripsi produk yang jelas, jujur,
+                  dan tidak menyesatkan.
+                </li>
+                <li>
+                  Dilarang mengunggah produk ilegal, konten SARA, kekerasan,
+                  ujaran kebencian, atau foto yang melanggar hak cipta.
+                </li>
+                <li>
+                  Penjual bertanggung jawab atas kualitas produk, stok, dan
+                  komunikasi yang baik dengan pembeli.
+                </li>
+                <li>
+                  Semua transaksi dilakukan langsung lewat chat antara penjual
+                  dan pembeli; platform tidak mengurus pembayaran.
+                </li>
+                <li>
+                  Penjual dilarang melakukan penipuan, spam, manipulasi harga,
+                  atau tindakan yang merugikan pengguna lain.
+                </li>
+                <li>
+                  Platform berhak menghapus produk atau menonaktifkan akun yang
+                  melanggar aturan.
+                </li>
+                <li>Penjual wajib menjaga keamanan akun masing-masing.</li>
+                <li>
+                  Dengan mendaftar, penjual dianggap menyetujui seluruh aturan
+                  di atas.
+                </li>
+              </ol>
+
+              <p class="terms-conclusion">
+                Dengan mencentang kotak persetujuan, Anda dianggap telah
+                membaca, memahami, dan menyetujui semua isi dalam Syarat dan
+                Ketentuan ini.
+              </p>
+            </div>
+            <button type="button" class="toggle-terms" id="toggleTerms">
+              <span id="toggleText">Tampilkan lebih banyak</span>
+              <span class="arrow">▼</span>
+            </button>
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="agreeTerms" name="agreeTerms" required />
+            <label for="agreeTerms">
+              Saya telah membaca dan meyetujui
+              <a href="#">Syarat dan Ketentuan</a>
+            </label>
+          </div>
+
+          <button type="submit" class="submit-btn" id="submitBtn" disabled>
+            Daftar
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+
+    <script>
+      const agreeCheckbox = document.getElementById("agreeTerms");
+      const submitBtn = document.getElementById("submitBtn");
+      const toggleBtn = document.getElementById("toggleTerms");
+      const termsBox = document.getElementById("termsBox");
+      const toggleText = document.getElementById("toggleText");
+
+      // Toggle terms visibility
+      toggleBtn.addEventListener("click", function () {
+        termsBox.classList.toggle("expanded");
+        toggleBtn.classList.toggle("expanded");
+
+        if (termsBox.classList.contains("expanded")) {
+          toggleText.textContent = "Tampilkan lebih sedikit";
+        } else {
+          toggleText.textContent = "Tampilkan lebih banyak";
+        }
+      });
+
+      // Enable submit button when checkbox is checked
+      agreeCheckbox.addEventListener("change", function () {
+        submitBtn.disabled = !this.checked;
+      });
+    </script>
+  </body>
+</html>

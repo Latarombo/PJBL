@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nadane Store - Dashboard</title>
+    <link rel="stylesheet" href="beranda.css" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo">
+        <img src="../images_gnrl/NADANE.png" alt="Logo Nadane" />
+      </div>
+      <nav class="menu">
+        <a href="#" class="menu-item active">
+          <img src="../images_gnrl/icon/beranda.svg" alt="Home" />
+          <span>Beranda Dasbor</span>
+        </a>
+        <a href="#" class="menu-item">
+          <img src="../images_gnrl/icon/Box.svg" alt="My Product" />
+          <span>Produk Saya</span>
+        </a>
+        <a href="#" class="menu-item">
+          <img src="../images_gnrl/icon/cart(24).png" alt="Pesanan" />
+          <span>Pesanan</span>
+        </a>
+      </nav>
+      <a href="#" class="logout">
+        <svg
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          style="width: 20px; height: 20px"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z"
+            clip-rule="evenodd"
+          />
+        </svg>
+        <span>Log Out</span>
+      </a>
+    </div>
+
+    <div class="main-content">
+      <div class="header">
+        <div class="header-title">
+          <h1>Selamat Datang, Butik Nusantara Heritage Store!</h1>
+          <p>Berikut adalah ringkasan performa toko Anda.</p>
+        </div>
+        <button class="add-product-btn">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              fill-rule="evenodd"
+              d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          Tambah Produk Baru
+        </button>
+      </div>
+
+      <div class="search-bar">
+        <input type="text" placeholder="Cari produk atau pesanan..." />
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Total Penjualan (Bulan Ini)</div>
+          <div class="stat-value">Rp 15.750.000</div>
+          <div class="stat-change positive"><span>↑</span> +5.4%</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Total Pesanan (Bulan Ini)</div>
+          <div class="stat-value">124</div>
+          <div class="stat-change positive"><span>↑</span> +2.1%</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Produk Aktif</div>
+          <div class="stat-value">85</div>
+          <div class="stat-change positive"><span>↑</span> +1.2%</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Pesanan Tertunda</div>
+          <div class="stat-value">4</div>
+          <div class="stat-change negative"><span>↓</span> -1.5%</div>
+        </div>
+      </div>
+
+      <h2 class="section-title">Aktivitas Terbaru</h2>
+
+      <div class="tabs">
+        <div class="tab active">Pesanan Terbaru</div>
+        <div class="tab">Produk Terlaris</div>
+      </div>
+
+      <button class="filter-btn">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+          <path
+            fill-rule="evenodd"
+            d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z"
+            clip-rule="evenodd"
+          />
+        </svg>
+        Filter
+      </button>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>ID PESANAN</th>
+              <th>PELANGGAN</th>
+              <th>TANGGAL</th>
+              <th>STATUS</th>
+              <th>TOTAL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#NDN-1203</td>
+              <td>Budi Santoso</td>
+              <td>12 Nov 2023</td>
+              <td>
+                <span class="status-badge status-terkirim">Terkirim</span>
+              </td>
+              <td>Rp 450.000</td>
+            </tr>
+            <tr>
+              <td>#NDN-1202</td>
+              <td>Citra Lestari</td>
+              <td>11 Nov 2023</td>
+              <td>
+                <span class="status-badge status-diproses">Diproses</span>
+              </td>
+              <td>Rp 780.000</td>
+            </tr>
+            <tr>
+              <td>#NDN-1201</td>
+              <td>Dewi Anggraini</td>
+              <td>11 Nov 2023</td>
+              <td>
+                <span class="status-badge status-menunggu"
+                  >Menunggu Pembayaran</span
+                >
+              </td>
+              <td>Rp 320.000</td>
+            </tr>
+            <tr>
+              <td>#NDN-1200</td>
+              <td>Agus Wijaya</td>
+              <td>10 Nov 2023</td>
+              <td>
+                <span class="status-badge status-dibatalkan">Dibatalkan</span>
+              </td>
+              <td>Rp 550.000</td>
+            </tr>
+            <tr>
+              <td>#NDN-1199</td>
+              <td>Eka Pratiwi</td>
+              <td>10 Nov 2023</td>
+              <td>
+                <span class="status-badge status-terkirim">Terkirim</span>
+              </td>
+              <td>Rp 1.200.000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

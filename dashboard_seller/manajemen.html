@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manajemen Pengguna</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #fff;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 240px;
+            height: 100vh;
+            background-color: #EEF2F5;
+            color: black;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            /* lebih rapat */
+            font-weight: 400;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar ul li {
+            margin: 10px 0;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: background-color 0.2s ease;
+        }
+
+        .sidebar ul li a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .sidebar .active {
+            background-color: #FFD700;
+            font-weight: 600;
+        }
+
+        .sidebar ul li img {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* khusus analitik */
+        .sidebar ul li.analitik {
+            margin-top: auto;
+            font-size: 14px;
+        }
+
+        .sidebar ul li.analitik img {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Main content */
+        .main {
+            margin-left: 260px;
+            padding: 30px;
+        }
+
+        .main h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        /* Search bar */
+        .search-bar {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 12px 16px 12px 44px;
+            border: 1px solid #767676;
+            font-size: 15px;
+            background-color: #F9FAFB;
+        }
+
+        .search-bar .search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            transition: opacity 0.2s ease;
+        }
+
+        .search-bar input:focus~.search-icon {
+            opacity: 0;
+        }
+
+        /* Summary boxes */
+        .summary {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .summary-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1;
+            border: 1px solid #633636;
+        }
+
+        .summary-box h3 {
+            font-size: 16px;
+            color: #000;
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        .summary-box p {
+            font-size: 24px;
+            font-weight: 800;
+            color: #000;
+        }
+
+        /* Quick navigation as boxes */
+        .quick-nav {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+    </style>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Admin Nadane</h2>
+        <ul>
+            <li data-page="beranda"><img src="beranda.svg" alt="Home"><a href="dashboardAdmin.html">Beranda Dasbor</a>
+            </li>
+            <li data-page="produk"><img src="paket.svg" alt="Produk"><a href="manajemenProduk.html">Manajemen Produk</a>
+            </li>
+            <li data-page="pengguna"><img src="orang.svg" alt="Pengguna"><a href="manajemenPengguna.html">Manajemen
+                    Pengguna</a></li>
+            <li data-page="active"><img src="kertas.svg" alt="Konten"><a href="manajemenKonten.html">Manajemen
+                    Konten</a></li>
+            <li class="analitik" data-page="analitik"><img src="tv.svg" alt="Analitik"><a
+                    href="analitik.html">Analitik</a></li>
+        </ul>
+    </div>
+
+    <script>
+        // Ambil semua item sidebar
+        const sidebarItems = document.querySelectorAll('.sidebar ul li');
+
+        // Fungsi untuk mengubah active (meskipun href akan navigasi, ini untuk efek visual jika diperlukan)
+        function changeActive(page) {
+            // Hapus class active dari semua item
+            sidebarItems.forEach(item => item.classList.remove('active'));
+
+            // Tambahkan class active ke item yang sesuai
+            const activeItem = document.querySelector(`.sidebar ul li[data-page="${page}"]`);
+            if (activeItem) {
+                activeItem.classList.add('active');
+            }
+        }
+
+        const currentPage = window.location.pathname.split("/").pop();
+        sidebarItems.forEach(item => {
+            const link = item.querySelector('a');
+            if (link && link.getAttribute('href') === currentPage) {
+                item.classList.add('active');
+            }
+        });
+
+
+        // Jika ingin klik mengubah active tanpa navigasi (opsional, karena href akan redirect)
+        sidebarItems.forEach(item => {
+            const link = item.querySelector('a');
+            link.addEventListener('click', () => {
+                sidebarItems.forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins";
+  background: linear-gradient(135deg, #f5f0e8 0%, #ebe4d8 100%);
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+}
+
+.form-card {
+  background-color: white;
+  border-radius: 15px;
+  padding: 40px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  color: #8b3a3a;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.form-subtitle {
+  text-align: center;
+  color: #333;
+  font-size: 14px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  color: #333;
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #8b3a3a;
+}
+
+.form-group input::placeholder {
+  color: #aaa;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #8b3a3a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background-color: #6d2d2d;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 20px;
+  }
+
+  .nav {
+    gap: 15px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+
+  .form-card {
+    padding: 30px 20px;
+  }
+}
