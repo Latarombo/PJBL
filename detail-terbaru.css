@@ -327,15 +327,13 @@ header {
 
 /* ========== SELLER INFO ========== */
 .seller-info {
-  background-color: white;
-  border-radius: 16px;
-  box-shadow: 0 3px 15px rgb(0 0 0 / 0.08);
   display: flex;
   align-items: center;
   gap: 24px;
-  padding: 24px 30px;
+  padding: 24px 0;
   color: #4a4a4a;
   width: 100%;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .seller-logo {
@@ -375,6 +373,7 @@ header {
 }
 
 .product-description-container h2 {
+  margin-top: 32px;
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 16px;
@@ -413,20 +412,23 @@ header {
 /* Rating Summary - Now Horizontal Layout */
 .rating-summary {
   width: 100%;
-  margin-bottom: 32px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid #e5e5e5;
 }
 
 .rating-score-inline {
+  width: 100%;
   display: flex;
-  gap: 60px;
+  gap: auto;
   align-items: center;
+  justify-content: center;
+  justify-items: center;
 }
 
 .score-left {
   min-width: 200px;
-  text-align: left;
+  text-align: center;
+  background-color: white;
+  border-radius: 12px;
+  padding: 28px 35px;
 }
 
 .score-number {
@@ -455,6 +457,10 @@ header {
   flex-direction: column;
   gap: 12px;
   max-width: 500px;
+  text-align: center;
+  background-color: white;
+  border-radius: 12px;
+  padding: 28px 35px;
 }
 
 .rating-bar-item {
