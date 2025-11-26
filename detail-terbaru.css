@@ -393,42 +393,29 @@ header {
   line-height: 1.8;
 }
 
-/* ========== REVIEWS SECTION - FIXED ========== */
-.reviews-section {
+/* ========== RATING SUMMARY - FIXED LEFT-RIGHT LAYOUT ========== */
+.rating-summary {
   width: 100%;
   background-color: white;
   border-radius: 12px;
   padding: 28px 35px;
   box-shadow: 0 5px 18px rgb(0 0 0 / 0.05);
-}
-
-.reviews-section h2 {
-  font-size: 22px;
-  font-weight: 700;
   margin-bottom: 24px;
-  color: #222;
-}
-
-/* Rating Summary - Now Horizontal Layout */
-.rating-summary {
-  width: 100%;
 }
 
 .rating-score-inline {
   width: 100%;
   display: flex;
-  gap: auto;
+  gap: 60px;
   align-items: center;
-  justify-content: center;
-  justify-items: center;
+  justify-content: space-between;
 }
 
 .score-left {
   min-width: 200px;
   text-align: center;
-  background-color: white;
-  border-radius: 12px;
-  padding: 28px 35px;
+  padding: 20px;
+  flex-shrink: 0;
 }
 
 .score-number {
@@ -456,11 +443,7 @@ header {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  max-width: 500px;
-  text-align: center;
-  background-color: white;
-  border-radius: 12px;
-  padding: 28px 35px;
+  max-width: 600px;
 }
 
 .rating-bar-item {
@@ -498,7 +481,23 @@ header {
   text-align: right;
 }
 
-/* Review List - Now Full Width Below */
+/* ========== REVIEWS SECTION - FULL WIDTH ========== */
+.reviews-section {
+  width: 100%;
+  background-color: white;
+  border-radius: 12px;
+  padding: 28px 35px;
+  box-shadow: 0 5px 18px rgb(0 0 0 / 0.05);
+}
+
+.reviews-section h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #222;
+}
+
+/* Review List - Full Width */
 .review-list {
   width: 100%;
   display: flex;
@@ -509,6 +508,7 @@ header {
 .review-item {
   border-bottom: 1px solid #e5e5e5;
   padding-bottom: 24px;
+  width: 100%;
 }
 
 .review-item:last-child {
@@ -521,6 +521,7 @@ header {
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 12px;
+  width: 100%;
 }
 
 .reviewer-info {
@@ -559,6 +560,7 @@ header {
 .review-date {
   font-size: 13px;
   color: #888;
+  white-space: nowrap;
 }
 
 .review-text {
@@ -566,6 +568,8 @@ header {
   line-height: 1.7;
   color: #444;
   margin-bottom: 14px;
+  width: 100%;
+  word-wrap: break-word;
 }
 
 .review-actions {
