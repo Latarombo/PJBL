@@ -394,7 +394,7 @@ header {
   line-height: 1.8;
 }
 
-/* ========== REVIEWS SECTION ========== */
+/* ========== REVIEWS SECTION - FIXED ========== */
 .reviews-section {
   width: 100%;
   background-color: white;
@@ -410,35 +410,38 @@ header {
   color: #222;
 }
 
-.reviews-container {
-  display: flex;
-  gap: 40px;
-}
-
-/* Rating Summary */
+/* Rating Summary - Now Horizontal Layout */
 .rating-summary {
-  min-width: 280px;
+  width: 100%;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e5e5e5;
 }
 
-.rating-score {
-  text-align: center;
-  margin-bottom: 24px;
-  padding: 20px;
-  background: #f9f9f9;
-  border-radius: 12px;
+.rating-score-inline {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.score-left {
+  min-width: 200px;
+  text-align: left;
 }
 
 .score-number {
-  font-size: 48px;
+  font-size: 56px;
   font-weight: 700;
   color: #7b1a1a;
   margin-bottom: 8px;
+  line-height: 1;
 }
 
 .stars-large {
-  font-size: 28px;
+  font-size: 24px;
   color: #f5a623;
   margin-bottom: 8px;
+  letter-spacing: 2px;
 }
 
 .total-reviews {
@@ -447,9 +450,11 @@ header {
 }
 
 .rating-bars {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
+  max-width: 500px;
 }
 
 .rating-bar-item {
@@ -461,14 +466,15 @@ header {
 .star-label {
   font-size: 14px;
   font-weight: 500;
-  width: 20px;
+  width: 15px;
+  text-align: center;
 }
 
 .bar-container {
   flex: 1;
-  height: 8px;
+  height: 10px;
   background: #e0e0e0;
-  border-radius: 4px;
+  border-radius: 5px;
   overflow: hidden;
 }
 
@@ -476,6 +482,7 @@ header {
   height: 100%;
   background: #f5a623;
   transition: width 0.3s ease;
+  border-radius: 5px;
 }
 
 .percentage {
@@ -485,9 +492,9 @@ header {
   text-align: right;
 }
 
-/* Review List */
+/* Review List - Now Full Width Below */
 .review-list {
-  flex: 1;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -495,7 +502,7 @@ header {
 
 .review-item {
   border-bottom: 1px solid #e5e5e5;
-  padding-bottom: 20px;
+  padding-bottom: 24px;
 }
 
 .review-item:last-child {
@@ -517,8 +524,8 @@ header {
 }
 
 .reviewer-avatar {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: #7b1a1a;
   color: white;
@@ -526,7 +533,8 @@ header {
   align-items: center;
   justify-content: center;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 15px;
+  flex-shrink: 0;
 }
 
 .reviewer-name {
@@ -539,6 +547,7 @@ header {
 .review-stars {
   color: #f5a623;
   font-size: 14px;
+  letter-spacing: 1px;
 }
 
 .review-date {
@@ -548,14 +557,14 @@ header {
 
 .review-text {
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.7;
   color: #444;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .review-actions {
   display: flex;
-  gap: 16px;
+  gap: 20px;
 }
 
 .review-btn {
@@ -568,6 +577,7 @@ header {
   align-items: center;
   gap: 6px;
   transition: color 0.3s;
+  padding: 0;
 }
 
 .review-btn:hover {
@@ -848,15 +858,26 @@ footer.site-footer {
   .product-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .rating-score-inline {
+    gap: 40px;
+  }
 }
 
 @media (max-width: 1024px) {
-  .reviews-container {
+  .rating-score-inline {
     flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
   }
 
-  .rating-summary {
+  .score-left {
+    text-align: left;
+  }
+
+  .rating-bars {
     width: 100%;
+    max-width: 100%;
   }
 
   .footer-grid {
@@ -925,6 +946,14 @@ footer.site-footer {
   footer.site-footer {
     padding: 30px 40px;
   }
+
+  .score-number {
+    font-size: 48px;
+  }
+
+  .rating-score-inline {
+    gap: 20px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -948,5 +977,9 @@ footer.site-footer {
 
   header {
     padding: 15px 20px;
+  }
+
+  .score-left {
+    min-width: auto;
   }
 }
