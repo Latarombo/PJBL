@@ -2,7 +2,8 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <title>Landing Page - Pakaian Adat Nusantara</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Katalog - Pakaian Adat Nusantara | Nadane</title>
     <link rel="stylesheet" href="katalog.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,14 +31,16 @@
 
       <!-- Navigasi di tengah -->
       <nav class="nav-menu">
-        <ul>
+        <ul id="navMenu">
           <li><a href="homepage.html">Beranda</a></li>
           <li><a href="Katalog.html">Katalog</a></li>
           <li><a href="tentangkami.html">Tentang Kami</a></li>
           <li><a href="Bantuan.html">Bantuan</a></li>
-          <!-- Tambahan: Item untuk ikon-ikon di hamburger -->
+
+          <!-- Mobile icons (muncul di dalam hamburger menu) -->
           <li class="mobile-icons">
             <div class="mobile-icon-group">
+              <!-- Search Mobile -->
               <form
                 class="search-wrapper"
                 role="search"
@@ -55,12 +58,18 @@
                   <img src="search.svg" alt="Icon pencarian" />
                 </button>
               </form>
-              <a href="profile.html" class="mobile-icon-link"
-                ><img src="profile.svg" alt="Profil"
-              /></a>
-              <a href="keranjang.html" class="mobile-icon-link"
-                ><img src="keranjang.svg" alt="Keranjang"
-              /></a>
+
+              <!-- Icons Mobile -->
+              <div style="display: flex; gap: 15px; align-items: center">
+                <a href="profile.html" class="mobile-icon-link">
+                  <img src="profile.svg" alt="Profil" />
+                </a>
+                <a href="keranjang.html" class="mobile-icon-link">
+                  <img src="keranjang.svg" alt="Keranjang" />
+                </a>
+              </div>
+
+              <!-- Button Mobile -->
               <button class="nav-button nav-button-mobile">Bergabung</button>
             </div>
           </li>
@@ -69,6 +78,7 @@
 
       <!-- Ikon di Kanan (untuk desktop/tablet) -->
       <div class="nav-icons">
+        <!-- Search Desktop -->
         <form
           class="search-wrapper"
           role="search"
@@ -86,14 +96,30 @@
             <img src="search.svg" alt="Icon pencarian" />
           </button>
         </form>
+
+        <!-- Button Desktop -->
         <button class="nav-button">Bergabung</button>
-        <img src="hamburger.svg" alt="Menu" class="menu-icon" />
-        <img src="garis.svg" alt="Menu" />
-        <img src="keranjang.svg" alt="Keranjang" />
-        <img src="profile.svg" alt="Profil" />
+
+        <!-- Hamburger Icon (hanya muncul di mobile) -->
+        <img
+          src="hamburger.svg"
+          alt="Menu"
+          class="menu-icon"
+          id="hamburgerIcon"
+        />
+
+        <!-- Icons Desktop -->
+        <img src="garis.svg" alt="Divider" />
+        <a href="keranjang.html">
+          <img src="keranjang.svg" alt="Keranjang" />
+        </a>
+        <a href="profile.html">
+          <img src="profile.svg" alt="Profil" />
+        </a>
       </div>
     </header>
-    <!-- card -->
+
+    <!-- Card Section -->
     <section class="card-container">
       <div class="adat-card">
         <div class="image-wrapper">
@@ -119,6 +145,7 @@
       </div>
     </section>
 
+    <!-- Produk Section -->
     <section class="produk-kebaya">
       <div class="produk-grid">
         <!-- Produk 1 -->
@@ -129,7 +156,10 @@
           </div>
           <h4>Pakaian Adat Kebaya Bali</h4>
           <p>•12rb+ pengunjung</p>
-          <h4><span class="stars">★</span><span>4.7+</span></h4>
+          <div>
+            <span class="stars">★</span>
+            <span>4.7+</span>
+          </div>
           <span class="harga">Rp. 309.000</span>
         </div>
 
@@ -141,7 +171,10 @@
           </div>
           <h4>Kebaya Kutubaru</h4>
           <p>•21rb+ pengunjung</p>
-          <h4><span class="stars">★</span><span>4.1+</span></h4>
+          <div>
+            <span class="stars">★</span>
+            <span>4.1+</span>
+          </div>
           <span class="harga">Rp. 295.000</span>
         </div>
 
@@ -153,7 +186,10 @@
           </div>
           <h4>Pakaian Kebaya Modern</h4>
           <p>•26rb+ pengunjung</p>
-          <h4><span class="stars">★</span><span>4.5+</span></h4>
+          <div>
+            <span class="stars">★</span>
+            <span>4.5+</span>
+          </div>
           <span class="harga">Rp. 275.000</span>
         </div>
 
@@ -165,10 +201,14 @@
           </div>
           <h4>Kebaya Hitam</h4>
           <p>•19rb+ pengunjung</p>
-          <h4><span class="stars">★</span><span>4.2+</span></h4>
+          <div>
+            <span class="stars">★</span>
+            <span>4.2+</span>
+          </div>
           <span class="harga">Rp. 215.000</span>
         </div>
-
+      </div>
+      <div class="produk-grid">
         <!-- Produk 5 -->
         <div class="produk-item">
           <div class="produk-item-image-wrapper">
@@ -177,7 +217,10 @@
           </div>
           <h4>Pakaian Adat Kebaya Abu</h4>
           <p>•11rb+ pengunjung</p>
-          <h4><span class="stars">★</span><span>4.5+</span></h4>
+          <div>
+            <span class="stars">★</span>
+            <span>4.5+</span>
+          </div>
           <span class="harga">Rp. 322.000</span>
         </div>
 
@@ -189,7 +232,10 @@
           </div>
           <h4>Kebaya Merah</h4>
           <p>•14rb+ pengunjung</p>
-          <h4><span class="stars">★</span><span>4.3+</span></h4>
+          <div>
+            <span class="stars">★</span>
+            <span>4.3+</span>
+          </div>
           <span class="harga">Rp. 269.000</span>
         </div>
 
@@ -201,7 +247,10 @@
           </div>
           <h4>Pakaian Kebaya Merah</h4>
           <p>•13rb+ pengunjung</p>
-          <h4><span class="stars">★</span> <span>4.2+</span></h4>
+          <div>
+            <span class="stars">★</span>
+            <span>4.2+</span>
+          </div>
           <span class="harga">Rp. 235.000</span>
         </div>
 
@@ -213,16 +262,21 @@
           </div>
           <h4>Kebaya Hijau</h4>
           <p>•19rb+ pengunjung</p>
-          <h4><span class="stars">★</span><span>4.0+</span></h4>
+          <div>
+            <span class="stars">★</span>
+            <span>4.0+</span>
+          </div>
           <span class="harga">Rp. 315.000</span>
         </div>
       </div>
     </section>
 
+    <!-- Button Lihat Produk Lainnya -->
     <div class="lihat-produk-wrapper">
       <button class="lihat-produk-btn">Lihat Produk Lainnya</button>
     </div>
 
+    <!-- Footer -->
     <footer class="site-footer" role="contentinfo" aria-label="Footer">
       <div class="footer-grid">
         <!-- Kolom 1: Logo & deskripsi -->
@@ -241,67 +295,96 @@
         <div class="footer-col">
           <h6>Navigasi Cepat</h6>
           <a href="homepage.html">Beranda</a>
-          <a href="search">Pencarian</a>
+          <a href="search.html">Pencarian</a>
           <a href="Katalog.html">Katalog produk</a>
           <a href="Login.html">Bergabung</a>
           <a href="tentangkami.html">Tentang kami</a>
-          <a href="seller">Jadi Penjual</a>
+          <a href="seller.html">Jadi Penjual</a>
           <a href="Bantuan.html">Bantuan</a>
         </div>
 
         <!-- Kolom 3: Ikuti Kami -->
         <div class="footer-col">
           <h6>Ikuti Kami</h6>
-          <a href="https://wa.me/081234839603"
-            ><img src="wa.svg" alt="WhatsApp" /> WhatsApp</a
+          <a href="https://wa.me/081234839603" target="_blank" rel="noopener">
+            <img src="wa.svg" alt="WhatsApp" /> WhatsApp
+          </a>
+          <a
+            href="http://t.me/Najwarorowidari24RPLC"
+            target="_blank"
+            rel="noopener"
           >
-          <a href="http://t.me/Najwarorowidari24RPLC"
-            ><img src="telegram.svg" alt="Telegram" /> Telegram</a
+            <img src="telegram.svg" alt="Telegram" /> Telegram
+          </a>
+          <a
+            href="https://www.instagram.com/nmiyung"
+            target="_blank"
+            rel="noopener"
           >
-          <a href="https://www.instagram.com/nmiyung"
-            ><img src="instagram.svg" alt="Instagram" /> Instagram</a
+            <img src="instagram.svg" alt="Instagram" /> Instagram
+          </a>
+          <a
+            href="https://www.facebook.com/najwarorowidari"
+            target="_blank"
+            rel="noopener"
           >
-          <a href="https://www.facebook.com/najwarorowidari"
-            ><img src="facebook.svg" alt="Facebook" /> Facebook</a
-          >
+            <img src="facebook.svg" alt="Facebook" /> Facebook
+          </a>
         </div>
 
         <!-- Kolom 4: Kontak -->
         <div class="footer-col">
           <h6>Kontak</h6>
-          <a href="https://wa.me/081234839603"
-            ><img src="telepon.svg" alt="telepon" /> +6281234623303</a
-          >
-          <a href="mailto:email@nrorowidari.com"
-            ><img src="email.svg" alt="email" /> nadane@gmail.com</a
-          >
+          <a href="tel:+6281234623303">
+            <img src="telepon.svg" alt="telepon" /> +6281234623303
+          </a>
+          <a href="mailto:nadane@gmail.com">
+            <img src="email.svg" alt="email" /> nadane@gmail.com
+          </a>
         </div>
       </div>
 
       <!-- Copyright -->
       <div class="footer-bottom">
         © 2025 Nadane. All rights reserved. &nbsp; | &nbsp;
-        <a href="#">Syarat & Ketentuan</a> &nbsp; | &nbsp;
-        <a href="#">Kebijakan Privasi</a>
+        <a href="syarat-ketentuan.html">Syarat & Ketentuan</a> &nbsp; | &nbsp;
+        <a href="kebijakan-privasi.html">Kebijakan Privasi</a>
       </div>
     </footer>
-    <script>
-      // Script hamburger
-      const menuIcon = document.querySelector(".nav-icons img.menu-icon");
-      const navMenu = document.querySelector(".nav-menu ul");
 
-      if (menuIcon && navMenu) {
-        menuIcon.addEventListener("click", () => {
+    <script>
+      // Script hamburger menu
+      const hamburgerIcon = document.getElementById("hamburgerIcon");
+      const navMenu = document.getElementById("navMenu");
+
+      if (hamburgerIcon && navMenu) {
+        hamburgerIcon.addEventListener("click", function () {
           navMenu.classList.toggle("active");
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener("click", function (event) {
+          const isClickInsideMenu = navMenu.contains(event.target);
+          const isClickOnHamburger = hamburgerIcon.contains(event.target);
+
+          if (
+            !isClickInsideMenu &&
+            !isClickOnHamburger &&
+            navMenu.classList.contains("active")
+          ) {
+            navMenu.classList.remove("active");
+          }
         });
       }
 
       // Script search (untuk semua search-wrapper)
       const searchWrappers = document.querySelectorAll(".search-wrapper");
+
       searchWrappers.forEach((wrapper) => {
         const searchInput = wrapper.querySelector(".search-input");
         const searchButton = wrapper.querySelector(".search-button");
 
+        // Click pada wrapper untuk expand
         wrapper.addEventListener("click", (e) => {
           if (!wrapper.classList.contains("active")) {
             e.preventDefault();
@@ -310,32 +393,41 @@
           }
         });
 
+        // Submit search
         wrapper.addEventListener("submit", (e) => {
           e.preventDefault();
           const query = searchInput.value.trim();
           if (query) {
+            console.log("Mencari:", query);
+            // Redirect ke halaman search
+            // window.location.href = `/search?query=${encodeURIComponent(query)}`;
             alert(`Mencari: ${query}`);
-            // Ganti dengan redirect: window.location.href = `/search?query=${encodeURIComponent(query)}`;
           }
         });
       });
 
-      // Klik di luar: sembunyikan search
+      // Klik di luar search: tutup search
       document.addEventListener("click", (e) => {
         searchWrappers.forEach((wrapper) => {
           if (!wrapper.contains(e.target)) {
             wrapper.classList.remove("active");
-            wrapper.querySelector(".search-input").value = "";
+            const searchInput = wrapper.querySelector(".search-input");
+            if (searchInput) {
+              searchInput.value = "";
+            }
           }
         });
       });
 
-      // Escape untuk keluar
+      // Escape key untuk menutup search
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") {
           searchWrappers.forEach((wrapper) => {
             wrapper.classList.remove("active");
-            wrapper.querySelector(".search-input").value = "";
+            const searchInput = wrapper.querySelector(".search-input");
+            if (searchInput) {
+              searchInput.value = "";
+            }
           });
         }
       });

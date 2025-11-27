@@ -2,13 +2,12 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <title>katalog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Katalog - Pakaian Adat Nusantara | Nadane</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -19,10 +18,11 @@
       }
 
       body {
-        margin: 0;
-        font-family: "Poppins";
+        font-family: "Poppins", sans-serif;
         background-color: #faf7f7;
       }
+
+      /* ===== HEADER ===== */
       header {
         background: rgba(255, 255, 255, 0.9);
         width: 100%;
@@ -33,18 +33,7 @@
         position: sticky;
         top: 0;
         z-index: 1000;
-        overflow: hidden;
-        column-gap: 20px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
-
-      .btn {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #9a3b3b;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 15px;
       }
 
       .logo img {
@@ -86,6 +75,7 @@
       .nav-icons img {
         width: 30px;
         height: 22px;
+        cursor: pointer;
       }
 
       .nav-button {
@@ -103,229 +93,11 @@
         background-color: #7a2e2e;
       }
 
-      .search-wrapper {
-        position: relative;
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        background-color: #fff;
-        overflow: hidden;
-        border: 1.5px solid transparent;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: width 0.4s ease, border-radius 0.4s ease,
-          background-color 0.4s ease, border-color 0.4s ease;
+      .mobile-icons {
+        display: none;
       }
 
-      .search-button {
-        border: none;
-        background: transparent;
-        cursor: pointer;
-        padding: 0;
-        margin: 0;
-        width: 36px;
-        height: 32px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        filter: none;
-        transition: filter 0.3s;
-        user-select: none;
-        color: #424e60;
-      }
-
-      .search-button:hover {
-        filter: brightness(1.3);
-      }
-
-      .search-button img {
-        width: 30px;
-        height: 20px;
-        object-fit: contain;
-        color: #424e60;
-        pointer-events: none;
-      }
-
-      .search-wrapper.active {
-        width: 280px;
-        border-radius: 28px;
-        background-color: #fff;
-        border-color: #ddd;
-        box-shadow: 0 0 6px rgb(198 160 74 / 0.3);
-        cursor: auto;
-        padding: 0 12px;
-      }
-
-      .search-wrapper .search-input {
-        width: 0;
-        opacity: 0;
-        border: none;
-        outline: none;
-        background: transparent;
-        font-size: 14px;
-        padding: 6px 8px;
-        transition: width 0.4s ease, opacity 0.3s ease;
-        color: #444;
-        font-weight: 400;
-        flex-grow: 1;
-      }
-
-      .search-wrapper.active .search-input {
-        width: 100%;
-        opacity: 1;
-      }
-
-      .search-input::-webkit-search-cancel-button {
-        -webkit-appearance: none;
-        height: 16px;
-        width: 16px;
-        background: url('data:image/svg+xml;utf8,<svg fill="red" xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 24 24"><path d="M18.3 5.7a1 1 0 0 0-1.4 0L12 10.6 7.1 5.7A1 1 0 1 0 5.7 7.1L10.6 12l-4.9 4.9a1 1 0 1 0 1.4 1.4l4.9-4.9 4.9 4.9a1 1 0 1 0 1.4-1.4L13.4 12l4.9-4.9a1 1 0 0 0 0-1.4z"/></svg>')
-          no-repeat center;
-        cursor: pointer;
-      }
-
-      /* Responsif untuk NAV BAR */
-      /* Desktop (>= 1025px) */
-      @media (min-width: 1025px) {
-        header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 10px 40px;
-        }
-
-        .nav-menu ul {
-          display: flex;
-          gap: 40px;
-          justify-content: center;
-        }
-
-        .nav-icons {
-          display: flex;
-          align-items: center;
-          gap: 15px;
-        }
-
-        .nav-icons img,
-        .nav-button {
-          display: inline-block;
-        }
-
-        /* Sembunyikan ikon hamburger di desktop */
-        .nav-icons img.menu-icon {
-          display: none;
-        }
-
-        /* Sembunyikan item mobile-icons di desktop */
-        .mobile-icons {
-          display: none;
-        }
-      }
-
-      /* Tablet (601px - 1024px) */
-      @media (min-width: 601px) and (max-width: 1024px) {
-        header {
-          padding: 10px 30px;
-        }
-
-        .nav-menu ul {
-          gap: 25px;
-        }
-
-        .nav-icons {
-          gap: 12px;
-        }
-
-        /* Sembunyikan item mobile-icons di tablet */
-        .mobile-icons {
-          display: none;
-        }
-      }
-
-      /* Mobile (<= 600px) */
-      @media (max-width: 600px) {
-        header {
-          flex-wrap: wrap;
-          padding: 10px 20px;
-        }
-
-        .nav-menu ul {
-          flex-direction: column;
-          width: 100%;
-          background-color: white;
-          display: none;
-          padding: 10px 0;
-          margin-top: 10px;
-          border-radius: 8px;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .nav-menu ul.active {
-          display: flex;
-        }
-
-        .nav-menu ul li {
-          margin-bottom: 10px;
-          text-align: center;
-        }
-
-        /* Tampilkan hamburger */
-        .nav-icons img.menu-icon {
-          display: inline-block;
-          width: 30px;
-          cursor: pointer;
-        }
-
-        /* Sembunyikan nav-icons utama di mobile, kecuali hamburger */
-        .nav-icons img:not(.menu-icon),
-        .nav-button:not(.nav-button-mobile) {
-          display: none;
-        }
-
-        /* Styling untuk mobile-icons di hamburger */
-        .mobile-icons {
-          display: block;
-          margin-top: 20px;
-          border-top: 1px solid #ddd;
-          padding-top: 10px;
-        }
-
-        .mobile-icon-group {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          gap: 15px;
-        }
-
-        .mobile-icon-link img {
-          width: 24px;
-          height: 24px;
-        }
-
-        .mobile-icon-group .search-wrapper {
-          width: 200px;
-          height: 32px;
-        }
-
-        .mobile-icon-group .search-wrapper.active {
-          width: 200px;
-        }
-
-        .nav-button.nav-button-mobile {
-          display: inline-block;
-          font-size: 0.8rem;
-          padding: 6px 12px;
-        }
-
-        .nav-icons {
-          margin-left: auto;
-          gap: 10px;
-        }
-      }
-      /* ampe sini */
-
+      /* ===== CARD SECTION ===== */
       .card-container {
         display: flex;
         justify-content: center;
@@ -338,13 +110,11 @@
         align-items: flex-start;
         background-color: white;
         border-radius: 16px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        box-shadow: 8px 8px 16px rgba(167, 164, 164, 0.3);
         padding: 20px;
-        max-width: 900px;
+        max-width: 1180px;
         width: 100%;
         gap: 20px;
-        box-shadow: 8px 8px 16px;
-        color: #a7a4a4;
       }
 
       .image-wrapper {
@@ -359,32 +129,24 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border-radius: 15px;
-      }
-
-      .adat-content {
-        flex: 1;
       }
 
       .adat-content h2 {
-        font-family: "Poppins", sans-serif;
         font-size: 1.8rem;
         font-weight: 600;
         color: #9a3b3b;
-        margin-top: 4;
+        margin-bottom: 12px;
       }
 
       .adat-content p {
         font-family: "Roboto", sans-serif;
-        font-size: 1rem; /* atau 16px */
-        font-weight: 400;
+        font-size: 1rem;
         color: #000;
         margin-bottom: 20px;
         line-height: 1.6;
       }
 
       .read-more {
-        font-family: "Poppins", sans-serif;
         text-decoration: none;
         color: #deac3a;
         font-weight: bold;
@@ -395,6 +157,7 @@
         color: dimgrey;
       }
 
+      /* ===== PRODUK SECTION ===== */
       .produk-kebaya {
         background-color: #faf7f7;
         padding: 40px 20px;
@@ -402,26 +165,128 @@
         margin: 0 auto;
       }
 
-      .produk-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr); /* 4 kolom */
-        gap: 24px;
+      /* Container untuk scroll horizontal */
+      .produk-row {
+        margin-bottom: 40px;
       }
 
-      .produk-item img {
-        width: 217px;
-        height: 217px; /* gambar tidak terlalu tinggi */
-        object-fit: cover;
+      .produk-scroll-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scrollbar-color: #9a3b3b #f0f0f0;
+        padding-bottom: 10px;
+      }
+
+      .produk-scroll-container::-webkit-scrollbar {
+        height: 8px;
+      }
+
+      .produk-scroll-container::-webkit-scrollbar-track {
+        background: #f0f0f0;
+        border-radius: 10px;
+      }
+
+      .produk-scroll-container::-webkit-scrollbar-thumb {
+        background: #9a3b3b;
+        border-radius: 10px;
+      }
+
+      .produk-scroll-container::-webkit-scrollbar-thumb:hover {
+        background: #7a2e2e;
+      }
+
+      .produk-grid {
+        display: flex;
+        gap: 30px;
+        width: max-content;
+      }
+
+      .produk-item {
+        position: relative;
+        width: 250px;
+        flex-shrink: 0;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .produk-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .produk-item-image-wrapper {
+        position: relative;
+        width: 100%;
+        height: 250px;
         border-radius: 12px;
+        overflow: hidden;
         margin-bottom: 12px;
       }
 
+      .produk-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: filter 0.3s ease;
+      }
+
+      .produk-item:hover img {
+        filter: brightness(0.7);
+      }
+
+      .produk-item-image-wrapper::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0);
+        transition: background 0.3s ease;
+        pointer-events: none;
+        z-index: 1;
+        border-radius: 12px;
+      }
+
+      .produk-item:hover .produk-item-image-wrapper::before {
+        background: rgba(0, 0, 0, 0.3);
+      }
+
+      .lihat-koleksi-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: linear-gradient(90deg, #9a3b3b, #7e3030);
+        color: white;
+        padding: 12px 32px;
+        border-radius: 25px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        border: none;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 2;
+        white-space: nowrap;
+        box-shadow: 0 4px 12px rgba(154, 59, 59, 0.3);
+      }
+
+      .produk-item:hover .lihat-koleksi-btn {
+        opacity: 1;
+      }
+
       .produk-item h4 {
-        font-family: "Plus Jakarta Sans", sans-serif;
-        font-weight: 410;
         font-size: 1rem;
         margin: 0 0 6px;
         color: #1c0d0d;
+        font-weight: 500;
+      }
+
+      .stars {
+        color: #ffa500;
+        font-size: 18px;
       }
 
       .produk-item p {
@@ -434,171 +299,61 @@
         font-family: "Roboto", sans-serif;
         color: #ff5900;
         font-size: 0.95rem;
+        font-weight: 500;
       }
 
       .lihat-produk-wrapper {
-        background-color: #faf7f7;
         display: flex;
         justify-content: center;
         margin-top: 32px;
       }
 
       .lihat-produk-btn {
-        font-family: "Poppins", sans-serif;
         font-size: 1rem;
         padding: 10px 100px;
-        border: 2px solid #9a3b3b;
-        background: linear-gradient(90deg, #9a3b3b, #7e3030);
         color: #fff;
+        background: linear-gradient(90deg, #9a3b3b, #7e3030);
         border-radius: 16px;
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: 0.3s ease;
+        border: none;
       }
 
       .lihat-produk-btn:hover {
-        border: 2px solid #000;
-        background: #fff;
-        color: #000;
+        background: linear-gradient(90deg, #7e3030, #692828);
       }
 
-      /* responsif bagian konten (beda css doank cielah) */
-      /* Desktop/laptop (>= 1025px) - 4 kolom */
-      .produk-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 24px;
-        padding: 0 20px;
-      }
-
-      .produk-item img {
-        width: 100%;
-        max-width: 217px;
-        height: 217px;
-        object-fit: cover;
-        border-radius: 12px;
-        margin-bottom: 12px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      /* Tablet (601px - 1024px) - 2 kolom */
-      @media (min-width: 601px) and (max-width: 1024px) {
-        .produk-grid {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 20px;
-          padding: 0 30px;
-        }
-
-        .produk-item img {
-          max-width: 100%;
-          height: auto;
-        }
-      }
-
-      /* Mobile (<= 600px) - 1 kolom */
-      @media (max-width: 600px) {
-        .produk-grid {
-          grid-template-columns: 1fr;
-          padding: 0 15px;
-          gap: 16px;
-        }
-
-        .produk-item {
-          max-width: 320px;
-          margin: 0 auto;
-        }
-
-        .produk-item img {
-          max-width: 100%;
-          height: auto;
-        }
-
-        .lihat-produk-btn {
-          padding: 12px 60px;
-          font-size: 1rem;
-        }
-      }
-
-      /* Footer
-footer.site-footer {
-  padding: 15px 100px;
-  margin-top: 36px;
-  padding-top: 36px;
-  border-top: 1px solid rgba(16, 24, 40, 0.05);
-  background: #fff;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 18px;
-}
-
-.footer-logo img {
-  width: 150px;
-  height: auto;
-}
-
-.footer small {
-  display: block;
-  font-size: 11px;
-}
-
-.footer-col {
-  column-span: all;
-}
-.footer-col h6 {
-  margin: 0 0 10px 0;
-  font-size: 14px;
-}
-.footer-col a {
-  align-items: center;
-  display: block;
-  font-size: 14px;
-  margin-bottom: 8px;
-} */
-
-      /* FOOTER */
+      /* ===== FOOTER ===== */
       footer.site-footer {
         margin-top: 80px;
         padding: 40px 100px 20px;
         background: #832a2a;
-        border-top: 1px solid rgba(16, 24, 40, 0.05);
         color: #fff;
-        font-family: "Poppins", sans-serif;
       }
 
       .footer-grid {
         display: grid;
         grid-template-columns: 2fr 1fr 1fr 1fr;
         gap: 40px;
-        align-items: start;
       }
 
-      /* Logo dan deskripsi */
       .footer-logo img {
         width: 150px;
-        height: auto;
         margin-bottom: 12px;
       }
 
       .footer-col small {
         display: block;
         font-size: 11px;
-        color: #fff;
         line-height: 1.6;
       }
 
-      /* Judul kolom */
       .footer-col h6 {
         margin-bottom: 14px;
         font-size: 15px;
         font-weight: 600;
-        color: #fff;
       }
 
-      /* Link umum */
       .footer-col a {
         display: flex;
         align-items: center;
@@ -612,183 +367,388 @@ footer.site-footer {
 
       .footer-col a:hover {
         color: #ff9f03;
-        text-decoration: none;
       }
 
-      /* Ikon */
-      .footer-col a i {
-        font-size: 16px;
-      }
-
-      /* Bagian bawah footer */
       .footer-bottom {
         margin-top: 32px;
-        border-top: 1px solid rgba(16, 24, 40, 0.1);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
         padding-top: 16px;
         text-align: center;
         font-size: 13px;
-        color: #faf7f7;
       }
 
       .footer-bottom a {
         color: #76c3ff;
       }
 
-      /* Responsif */
-      /* Default Desktop (>= 1025px) */
-      .footer-grid {
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr 1fr;
-        gap: 40px;
+      /* ===== RESPONSIVE ===== */
+      @media (min-width: 1025px) {
+        .nav-icons img.menu-icon {
+          display: none;
+        }
+        .mobile-icons {
+          display: none;
+        }
       }
 
-      /* Tablet (>= 601px dan <= 1024px) */
       @media (min-width: 601px) and (max-width: 1024px) {
+        header {
+          padding: 10px 25px;
+        }
+
+        .logo img {
+          width: 170px;
+        }
+
+        .nav-menu ul {
+          gap: 18px;
+          font-size: 0.9rem;
+        }
+
+        .adat-card {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .image-wrapper {
+          width: 100%;
+          max-width: 280px;
+          height: 280px;
+          margin: 0 auto;
+        }
+
+        .adat-content h2 {
+          font-size: 1.5rem;
+          margin-top: 15px;
+        }
+
+        .adat-content p {
+          font-size: 0.9rem;
+        }
+
+        .produk-item {
+          width: 200px;
+        }
+
+        .produk-item-image-wrapper {
+          height: 200px;
+        }
+
+        .produk-grid {
+          gap: 20px;
+        }
+
         .footer-grid {
           grid-template-columns: 1fr 1fr;
+          gap: 30px;
+        }
+
+        footer.site-footer {
+          padding: 30px 40px;
+        }
+
+        .nav-icons img.menu-icon {
+          display: none;
         }
       }
 
-      /* Mobile (<= 600px) */
       @media (max-width: 600px) {
+        header {
+          flex-wrap: wrap;
+          padding: 10px 15px;
+          position: relative;
+        }
+
+        .logo img {
+          width: 120px;
+        }
+
+        .nav-menu ul {
+          flex-direction: column;
+          width: 100%;
+          background-color: white;
+          display: none;
+          padding: 15px 0;
+          margin-top: 10px;
+          border-radius: 8px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          position: absolute;
+          top: 55px;
+          left: 0;
+          right: 0;
+          z-index: 999;
+        }
+
+        .nav-menu ul.active {
+          display: flex;
+        }
+
+        .nav-menu ul li {
+          margin-bottom: 10px;
+          text-align: center;
+        }
+
+        .nav-menu ul li a {
+          font-size: 0.9rem;
+        }
+
+        .nav-icons img.menu-icon {
+          display: inline-block !important;
+          width: 26px;
+        }
+
+        .nav-icons > img:not(.menu-icon),
+        .nav-icons > a,
+        .nav-icons > .nav-button {
+          display: none;
+        }
+
+        .nav-icons {
+          margin-left: auto;
+        }
+
+        .mobile-icons {
+          display: block !important;
+          margin-top: 15px;
+          padding-top: 15px;
+          border-top: 1px solid #ddd;
+        }
+
+        .mobile-icon-group {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 12px;
+        }
+
+        .mobile-icon-group > div {
+          display: flex;
+          gap: 15px;
+        }
+
+        .mobile-icon-link img {
+          width: 24px;
+          height: 24px;
+        }
+
+        .nav-button.nav-button-mobile {
+          display: inline-block;
+          font-size: 0.85rem;
+          padding: 8px 20px;
+        }
+
+        .card-container {
+          padding: 25px 15px;
+        }
+
+        .adat-card {
+          flex-direction: column;
+          padding: 15px;
+        }
+
+        .image-wrapper {
+          width: 100%;
+          height: auto;
+          aspect-ratio: 1;
+        }
+
+        .adat-content h2 {
+          font-size: 1.1rem;
+          margin-top: 10px;
+        }
+
+        .adat-content p {
+          font-size: 0.8rem;
+          line-height: 1.5;
+        }
+
+        .read-more {
+          font-size: 0.85rem;
+        }
+
+        .produk-kebaya {
+          padding: 30px 0;
+        }
+
+        .produk-row {
+          margin-bottom: 30px;
+        }
+
+        .produk-scroll-container {
+          padding: 0 15px 10px 15px;
+        }
+
+        .produk-item {
+          width: 160px;
+        }
+
+        .produk-item-image-wrapper {
+          height: 160px;
+        }
+
+        .produk-grid {
+          gap: 15px;
+        }
+
+        .produk-item h4 {
+          font-size: 0.8rem;
+        }
+
+        .produk-item p {
+          font-size: 0.7rem;
+        }
+
+        .stars {
+          font-size: 14px;
+        }
+
+        .harga {
+          font-size: 0.8rem;
+        }
+
+        .lihat-koleksi-btn {
+          padding: 8px 20px;
+          font-size: 0.75rem;
+        }
+
+        .lihat-produk-wrapper {
+          padding: 0 15px;
+        }
+
+        .lihat-produk-btn {
+          padding: 10px 50px;
+          font-size: 0.9rem;
+        }
+
+        footer.site-footer {
+          margin-top: 50px;
+          padding: 25px 20px;
+        }
+
         .footer-grid {
           grid-template-columns: 1fr;
+          gap: 25px;
+        }
+
+        .footer-logo img {
+          width: 110px;
+        }
+
+        .footer-col h6 {
+          font-size: 13px;
+        }
+
+        .footer-col a,
+        .footer-col small {
+          font-size: 11px;
+        }
+
+        .footer-bottom {
+          font-size: 10px;
         }
       }
 
-      footer.site-footer {
-        padding: 30px 40px;
+      @media (max-width: 400px) {
+        .logo img {
+          width: 100px;
+        }
+
+        .nav-menu ul {
+          top: 50px;
+        }
+
+        .adat-content h2 {
+          font-size: 1rem;
+        }
+
+        .adat-content p {
+          font-size: 0.75rem;
+        }
+
+        .produk-item {
+          width: 140px;
+        }
+
+        .produk-item-image-wrapper {
+          height: 140px;
+        }
+
+        .produk-item h4 {
+          font-size: 0.75rem;
+        }
+
+        .produk-item p {
+          font-size: 0.65rem;
+        }
+
+        .stars {
+          font-size: 12px;
+        }
+
+        .harga {
+          font-size: 0.75rem;
+        }
+
+        .lihat-koleksi-btn {
+          padding: 6px 16px;
+          font-size: 0.7rem;
+        }
+
+        .lihat-produk-btn {
+          padding: 8px 40px;
+          font-size: 0.85rem;
+        }
       }
     </style>
+  </head>
+  <body>
     <header>
-      <!-- Logo di kiri -->
       <div class="logo">
         <a href="homepage.html">
           <img src="NADANE.png" alt="Logo NADANE" />
         </a>
       </div>
 
-      <!-- Navigasi di tengah -->
       <nav class="nav-menu">
-        <ul>
+        <ul id="navMenu">
           <li><a href="homepage.html">Beranda</a></li>
           <li><a href="Katalog.html">Katalog</a></li>
           <li><a href="tentangkami.html">Tentang Kami</a></li>
           <li><a href="Bantuan.html">Bantuan</a></li>
-          <!-- Tambahan: Item untuk ikon-ikon di hamburger -->
+
           <li class="mobile-icons">
             <div class="mobile-icon-group">
-              <form
-                class="search-wrapper"
-                role="search"
-                aria-label="Pencarian produk"
-              >
-                <input
-                  type="search"
-                  class="search-input"
-                  placeholder="Cari produk..."
-                  aria-label="Cari produk"
-                  name="search"
-                  autocomplete="off"
-                />
-                <button type="submit" class="search-button" aria-label="Cari">
-                  <img src="search.svg" alt="Icon pencarian" />
-                </button>
-              </form>
-              <a href="profile.html" class="mobile-icon-link"
-                ><img src="profile.svg" alt="Profil"
-              /></a>
-              <a href="keranjang.html" class="mobile-icon-link"
-                ><img src="keranjang.svg" alt="Keranjang"
-              /></a>
+              <div>
+                <a href="profile.html" class="mobile-icon-link">
+                  <img src="profile.svg" alt="Profil" />
+                </a>
+                <a href="keranjang.html" class="mobile-icon-link">
+                  <img src="keranjang.svg" alt="Keranjang" />
+                </a>
+              </div>
               <button class="nav-button nav-button-mobile">Bergabung</button>
             </div>
           </li>
         </ul>
       </nav>
 
-      <!-- Ikon di Kanan (untuk desktop/tablet) -->
       <div class="nav-icons">
-        <form
-          class="search-wrapper"
-          role="search"
-          aria-label="Pencarian produk"
-        >
-          <input
-            type="search"
-            class="search-input"
-            placeholder="Cari produk terbaik kami..."
-            aria-label="Cari produk"
-            name="search"
-            autocomplete="off"
-          />
-          <button type="submit" class="search-button" aria-label="Cari">
-            <img src="search.svg" alt="Icon pencarian" />
-          </button>
-        </form>
         <button class="nav-button">Bergabung</button>
-        <img src="hamburger.svg" alt="Menu" class="menu-icon" />
-        <img src="garis.svg" alt="Menu" />
-        <img src="keranjang.svg" alt="Keranjang" />
-        <img src="profile.svg" alt="Profil" />
+        <img
+          src="hamburger.svg"
+          alt="Menu"
+          class="menu-icon"
+          id="hamburgerIcon"
+        />
+        <img src="garis.svg" alt="Divider" />
+        <a href="keranjang.html">
+          <img src="keranjang.svg" alt="Keranjang" />
+        </a>
+        <a href="profile.html">
+          <img src="profile.svg" alt="Profil" />
+        </a>
       </div>
     </header>
-
-    <script>
-      // Script hamburger
-      const menuIcon = document.querySelector(".nav-icons img.menu-icon");
-      const navMenu = document.querySelector(".nav-menu ul");
-
-      if (menuIcon && navMenu) {
-        menuIcon.addEventListener("click", () => {
-          navMenu.classList.toggle("active");
-        });
-      }
-
-      // Script search (untuk semua search-wrapper)
-      const searchWrappers = document.querySelectorAll(".search-wrapper");
-      searchWrappers.forEach((wrapper) => {
-        const searchInput = wrapper.querySelector(".search-input");
-        const searchButton = wrapper.querySelector(".search-button");
-
-        wrapper.addEventListener("click", (e) => {
-          if (!wrapper.classList.contains("active")) {
-            e.preventDefault();
-            wrapper.classList.add("active");
-            searchInput.focus();
-          }
-        });
-
-        wrapper.addEventListener("submit", (e) => {
-          e.preventDefault();
-          const query = searchInput.value.trim();
-          if (query) {
-            alert(`Mencari: ${query}`);
-            // Ganti dengan redirect: window.location.href = `/search?query=${encodeURIComponent(query)}`;
-          }
-        });
-      });
-
-      // Klik di luar: sembunyikan search
-      document.addEventListener("click", (e) => {
-        searchWrappers.forEach((wrapper) => {
-          if (!wrapper.contains(e.target)) {
-            wrapper.classList.remove("active");
-            wrapper.querySelector(".search-input").value = "";
-          }
-        });
-      });
-
-      // Escape untuk keluar
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-          searchWrappers.forEach((wrapper) => {
-            wrapper.classList.remove("active");
-            wrapper.querySelector(".search-input").value = "";
-          });
-        }
-      });
-    </script>
 
     <section class="card-container">
       <div class="adat-card">
@@ -808,78 +768,147 @@ footer.site-footer {
             sederhana, tapi detail seperti bordir dan payet yang ada di Kebaya
             membuatnya terlihat sangat elegan.
           </p>
-          <a href="detail-kebaya.html" class="read-more">Baca Selengkapnya →</a>
+          <a href="artikel-kebaya.html" class="read-more"
+            >Baca Selengkapnya →</a
+          >
         </div>
       </div>
     </section>
 
     <section class="produk-kebaya">
-      <div class="produk-grid">
-        <div class="produk-item">
-          <img src="putih.svg" alt="Kebaya Bali" />
-          <h4>Pakaian Adat Kebaya Bali</h4>
-          <p>10rb pengunjung</p>
-          <h4>⭐ 4.5+</h4>
-          <span class="harga">Rp. 309.000</span>
+      <!-- Baris 1 (4 produk) -->
+      <div class="produk-row">
+        <div class="produk-scroll-container">
+          <div class="produk-grid">
+            <div class="produk-item">
+              <div class="produk-item-image-wrapper">
+                <img src="putih.svg" alt="Kebaya Bali" />
+                <button class="lihat-koleksi-btn">Lihat Koleksi</button>
+              </div>
+              <h4>Pakaian Adat Kebaya Bali</h4>
+              <p>•12rb+ pengunjung</p>
+              <div>
+                <span class="stars">★</span>
+                <span>4.7+</span>
+              </div>
+              <span class="harga">Rp. 309.000</span>
+            </div>
+
+            <div class="produk-item">
+              <div class="produk-item-image-wrapper">
+                <img src="merahpose.svg" alt="Kebaya Kutubaru" />
+                <button class="lihat-koleksi-btn">Lihat Koleksi</button>
+              </div>
+              <h4>Kebaya Kutubaru</h4>
+              <p>•21rb+ pengunjung</p>
+              <div>
+                <span class="stars">★</span>
+                <span>4.1+</span>
+              </div>
+              <span class="harga">Rp. 295.000</span>
+            </div>
+
+            <div class="produk-item">
+              <div class="produk-item-image-wrapper">
+                <img src="burgundy.svg" alt="Pakaian Kebaya Modern" />
+                <button class="lihat-koleksi-btn">Lihat Koleksi</button>
+              </div>
+              <h4>Pakaian Kebaya Modern</h4>
+              <p>•26rb+ pengunjung</p>
+              <div>
+                <span class="stars">★</span>
+                <span>4.5+</span>
+              </div>
+              <span class="harga">Rp. 275.000</span>
+            </div>
+
+            <div class="produk-item">
+              <div class="produk-item-image-wrapper">
+                <img src="hitam.svg" alt="Kebaya Hitam" />
+                <button class="lihat-koleksi-btn">Lihat Koleksi</button>
+              </div>
+              <h4>Kebaya Hitam</h4>
+              <p>•19rb+ pengunjung</p>
+              <div>
+                <span class="stars">★</span>
+                <span>4.2+</span>
+              </div>
+              <span class="harga">Rp. 215.000</span>
+            </div>
+          </div>
         </div>
-        <div class="produk-item">
-          <img src="merahpose.svg" alt="Kebaya Merah" />
-          <h4>Pakaian Kebaya Merah</h4>
-          <p>10rb pengunjung</p>
-          <h4>⭐ 4.5+</h4>
-          <span class="harga">Rp. 295.000</span>
-        </div>
-        <div class="produk-item">
-          <img src="burgundy.svg" alt="Kebaya Merah" />
-          <h4>Pakaian Kebaya Merah</h4>
-          <p>10rb pengunjung</p>
-          <h4>⭐ 4.5+</h4>
-          <span class="harga">Rp. 295.000</span>
-        </div>
-        <div class="produk-item">
-          <img src="hitam.svg" alt="Kebaya Merah" />
-          <h4>Pakaian Kebaya Merah</h4>
-          <p>10rb pengunjung</p>
-          <h4>⭐ 4.5+</h4>
-          <span class="harga">Rp. 295.000</span>
-        </div>
-        <div class="produk-item">
-          <img src="biru.svg" alt="Kebaya Merah" />
-          <h4>Pakaian Kebaya Merah</h4>
-          <p>10rb pengunjung</p>
-          <h4>⭐ 4.5+</h4>
-          <span class="harga">Rp. 295.000</span>
-        </div>
-        <div class="produk-item">
-          <img src="merah.svg" alt="Kebaya Merah" />
-          <h4>Pakaian Kebaya Merah</h4>
-          <p>10rb pengunjung</p>
-          <h4>⭐ 4.5+</h4>
-          <span class="harga">Rp. 295.000</span>
-        </div>
-        <div class="produk-item">
-          <img src="merahhitam.svg" alt="Kebaya Merah" />
-          <h4>Pakaian Kebaya Merah</h4>
-          <p>10rb pengunjung</p>
-          <h4>⭐ 4.5+</h4>
-          <span class="harga">Rp. 295.000</span>
-        </div>
-        <div class="produk-item">
-          <img src="hijau.svg" alt="Kebaya Merah" />
-          <h4>Pakaian Kebaya Merah</h4>
-          <p>10rb pengunjung</p>
-          <h4>⭐ 4.5+</h4>
-          <span class="harga">Rp. 295.000</span>
+      </div>
+
+      <!-- Baris 2 (4 produk) -->
+      <div class="produk-row">
+        <div class="produk-scroll-container">
+          <div class="produk-grid">
+            <div class="produk-item">
+              <div class="produk-item-image-wrapper">
+                <img src="biru.svg" alt="Pakaian Adat Kebaya Abu" />
+                <button class="lihat-koleksi-btn">Lihat Koleksi</button>
+              </div>
+              <h4>Pakaian Adat Kebaya Abu</h4>
+              <p>•11rb+ pengunjung</p>
+              <div>
+                <span class="stars">★</span>
+                <span>4.5+</span>
+              </div>
+              <span class="harga">Rp. 322.000</span>
+            </div>
+
+            <div class="produk-item">
+              <div class="produk-item-image-wrapper">
+                <img src="merah.svg" alt="Kebaya Merah" />
+                <button class="lihat-koleksi-btn">Lihat Koleksi</button>
+              </div>
+              <h4>Kebaya Merah</h4>
+              <p>•14rb+ pengunjung</p>
+              <div>
+                <span class="stars">★</span>
+                <span>4.3+</span>
+              </div>
+              <span class="harga">Rp. 269.000</span>
+            </div>
+
+            <div class="produk-item">
+              <div class="produk-item-image-wrapper">
+                <img src="merahhitam.svg" alt="Pakaian Kebaya Merah" />
+                <button class="lihat-koleksi-btn">Lihat Koleksi</button>
+              </div>
+              <h4>Pakaian Kebaya Merah</h4>
+              <p>•13rb+ pengunjung</p>
+              <div>
+                <span class="stars">★</span>
+                <span>4.2+</span>
+              </div>
+              <span class="harga">Rp. 235.000</span>
+            </div>
+
+            <div class="produk-item">
+              <div class="produk-item-image-wrapper">
+                <img src="hijau.svg" alt="Kebaya Hijau" />
+                <button class="lihat-koleksi-btn">Lihat Koleksi</button>
+              </div>
+              <h4>Kebaya Hijau</h4>
+              <p>•19rb+ pengunjung</p>
+              <div>
+                <span class="stars">★</span>
+                <span>4.0+</span>
+              </div>
+              <span class="harga">Rp. 315.000</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+
     <div class="lihat-produk-wrapper">
       <button class="lihat-produk-btn">Lihat Produk Lainnya</button>
     </div>
 
-    <footer class="site-footer" role="contentinfo" aria-label="Footer">
+    <footer class="site-footer">
       <div class="footer-grid">
-        <!-- Kolom 1: Logo & deskripsi -->
         <div class="footer-col">
           <div class="footer-logo">
             <img src="NADANE.png" alt="logo Nadane" />
@@ -891,53 +920,80 @@ footer.site-footer {
           </small>
         </div>
 
-        <!-- Kolom 2: Navigasi cepat -->
         <div class="footer-col">
           <h6>Navigasi Cepat</h6>
           <a href="homepage.html">Beranda</a>
-          <a href="search">Pencarian</a>
+          <a href="search.html">Pencarian</a>
           <a href="Katalog.html">Katalog produk</a>
           <a href="Login.html">Bergabung</a>
           <a href="tentangkami.html">Tentang kami</a>
-          <a href="seller">Jadi Penjual</a>
+          <a href="seller.html">Jadi Penjual</a>
           <a href="Bantuan.html">Bantuan</a>
         </div>
 
-        <!-- Kolom 3: Ikuti Kami -->
         <div class="footer-col">
           <h6>Ikuti Kami</h6>
-          <a href="https://wa.me/081234839603"
-            ><img src="wa.svg" alt="WhatsApp" /> WhatsApp</a
+          <a href="https://wa.me/081234839603" target="_blank" rel="noopener"
+            >WhatsApp</a
           >
-          <a href="http://t.me/Najwarorowidari24RPLC"
-            ><img src="telegram.svg" alt="Telegram" /> Telegram</a
+          <a
+            href="http://t.me/Najwarorowidari24RPLC"
+            target="_blank"
+            rel="noopener"
+            >Telegram</a
           >
-          <a href="https://www.instagram.com/nmiyung"
-            ><img src="instagram.svg" alt="Instagram" /> Instagram</a
+          <a
+            href="https://www.instagram.com/nmiyung"
+            target="_blank"
+            rel="noopener"
+            >Instagram</a
           >
-          <a href="https://www.facebook.com/najwarorowidari"
-            ><img src="facebook.svg" alt="Facebook" /> Facebook</a
+          <a
+            href="https://www.facebook.com/najwarorowidari"
+            target="_blank"
+            rel="noopener"
+            >Facebook</a
           >
         </div>
 
-        <!-- Kolom 4: Kontak -->
         <div class="footer-col">
           <h6>Kontak</h6>
-          <a href="https://wa.me/081234839603"
-            ><img src="telepon.svg" alt="telepon" /> +6281234623303</a
-          >
-          <a href="mailto:email@nrorowidari.com"
-            ><img src="email.svg" alt="email" /> nadane@gmail.com</a
-          >
+          <a href="tel:+6281234623303">+6281234623303</a>
+          <a href="mailto:nadane@gmail.com">nadane@gmail.com</a>
         </div>
       </div>
 
-      <!-- Copyright -->
       <div class="footer-bottom">
-        © 2025 Nadane. All rights reserved. &nbsp; | &nbsp;
-        <a href="#">Syarat & Ketentuan</a> &nbsp; | &nbsp;
-        <a href="#">Kebijakan Privasi</a>
+        © 2025 Nadane. All rights reserved. |
+        <a href="syarat-ketentuan.html">Syarat & Ketentuan</a> |
+        <a href="kebijakan-privasi.html">Kebijakan Privasi</a>
       </div>
     </footer>
-  </head>
+
+    <script>
+      // Hamburger menu
+      const hamburgerIcon = document.getElementById("hamburgerIcon");
+      const navMenu = document.getElementById("navMenu");
+
+      if (hamburgerIcon && navMenu) {
+        hamburgerIcon.addEventListener("click", function (e) {
+          e.stopPropagation();
+          navMenu.classList.toggle("active");
+        });
+
+        document.addEventListener("click", function (event) {
+          const isClickInsideMenu = navMenu.contains(event.target);
+          const isClickOnHamburger = hamburgerIcon.contains(event.target);
+
+          if (
+            !isClickInsideMenu &&
+            !isClickOnHamburger &&
+            navMenu.classList.contains("active")
+          ) {
+            navMenu.classList.remove("active");
+          }
+        });
+      }
+    </script>
+  </body>
 </html>

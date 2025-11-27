@@ -16,6 +16,8 @@ h3,
 p {
   color: #1c0d0d;
 }
+
+/* ===== HEADER & NAVIGATION ===== */
 header {
   background: rgba(255, 255, 255, 0.9);
   width: 100%;
@@ -26,18 +28,8 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  overflow: hidden;
   column-gap: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #9a3b3b;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 15px;
 }
 
 .logo img {
@@ -96,6 +88,7 @@ header {
   background-color: #7a2e2e;
 }
 
+/* Search wrapper */
 .search-wrapper {
   position: relative;
   width: 36px;
@@ -179,145 +172,12 @@ header {
   cursor: pointer;
 }
 
-/* Responsif untuk NAV BAR */
-/* Desktop (>= 1025px) */
-@media (min-width: 1025px) {
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 40px;
-  }
-
-  .nav-menu ul {
-    display: flex;
-    gap: 40px;
-    justify-content: center;
-  }
-
-  .nav-icons {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  }
-
-  .nav-icons img,
-  .nav-button {
-    display: inline-block;
-  }
-
-  /* Sembunyikan ikon hamburger di desktop */
-  .nav-icons img.menu-icon {
-    display: none;
-  }
-
-  /* Sembunyikan item mobile-icons di desktop */
-  .mobile-icons {
-    display: none;
-  }
+/* Mobile icons - hidden by default */
+.mobile-icons {
+  display: none;
 }
 
-/* Tablet (601px - 1024px) */
-@media (min-width: 601px) and (max-width: 1024px) {
-  header {
-    padding: 10px 30px;
-  }
-
-  .nav-menu ul {
-    gap: 25px;
-  }
-
-  .nav-icons {
-    gap: 12px;
-  }
-
-  /* Sembunyikan item mobile-icons di tablet */
-  .mobile-icons {
-    display: none;
-  }
-}
-
-/* Mobile (<= 600px) */
-@media (max-width: 600px) {
-  header {
-    flex-wrap: wrap;
-    padding: 10px 20px;
-  }
-
-  .nav-menu ul {
-    flex-direction: column;
-    width: 100%;
-    background-color: white;
-    display: none;
-    padding: 10px 0;
-    margin-top: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-menu ul.active {
-    display: flex;
-  }
-
-  .nav-menu ul li {
-    margin-bottom: 10px;
-    text-align: center;
-  }
-
-  /* Tampilkan hamburger */
-  .nav-icons img.menu-icon {
-    display: inline-block;
-    width: 30px;
-    cursor: pointer;
-  }
-
-  /* Sembunyikan nav-icons utama di mobile, kecuali hamburger */
-  .nav-icons img:not(.menu-icon),
-  .nav-button:not(.nav-button-mobile) {
-    display: none;
-  }
-
-  /* Styling untuk mobile-icons di hamburger */
-  .mobile-icons {
-    display: block;
-    margin-top: 20px;
-    border-top: 1px solid #ddd;
-    padding-top: 10px;
-  }
-
-  .mobile-icon-group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-  }
-
-  .mobile-icon-link img {
-    width: 24px;
-    height: 24px;
-  }
-
-  .mobile-icon-group .search-wrapper {
-    width: 200px;
-    height: 32px;
-  }
-
-  .mobile-icon-group .search-wrapper.active {
-    width: 200px;
-  }
-
-  .nav-button.nav-button-mobile {
-    display: inline-block;
-    font-size: 0.8rem;
-    padding: 6px 12px;
-  }
-
-  .nav-icons {
-    margin-left: auto;
-    gap: 10px;
-  }
-}
-/* card */
+/* ===== CARD SECTION ===== */
 .card-container {
   display: flex;
   justify-content: center;
@@ -330,16 +190,13 @@ header {
   align-items: flex-start;
   background-color: white;
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 8px 8px 16px rgba(167, 164, 164, 0.3);
   padding: 20px;
   max-width: 1180px;
   width: 100%;
   gap: 20px;
-  box-shadow: 8px 8px 16px;
-  color: #a7a4a4;
 }
 
-/* Bungkus gambar agar bisa dikontrol ukurannya */
 .image-wrapper {
   flex-shrink: 0;
   width: 200px;
@@ -364,7 +221,8 @@ header {
   font-size: 1.8rem;
   font-weight: 600;
   color: #9a3b3b;
-  margin-top: 4;
+  margin-top: 0;
+  margin-bottom: 12px;
 }
 
 .adat-content p {
@@ -388,7 +246,7 @@ header {
   color: dimgrey;
 }
 
-/* PRODUK KEBAYA - DIPERBAIKI */
+/* ===== PRODUK KEBAYA ===== */
 .produk-kebaya {
   background-color: #faf7f7;
   padding: 40px 20px;
@@ -410,7 +268,6 @@ header {
   flex-direction: column;
 }
 
-/* Image wrapper untuk kontrol hover */
 .produk-item-image-wrapper {
   position: relative;
   width: 100%;
@@ -433,7 +290,6 @@ header {
   filter: brightness(0.7);
 }
 
-/* Overlay gelap */
 .produk-item-image-wrapper::before {
   content: "";
   position: absolute;
@@ -452,7 +308,6 @@ header {
   background: rgba(0, 0, 0, 0.3);
 }
 
-/* Tombol "Lihat Koleksi" */
 .lihat-koleksi-btn {
   position: absolute;
   top: 50%;
@@ -531,33 +386,7 @@ header {
   background: linear-gradient(90deg, #7e3030, #692828);
 }
 
-/* Responsif */
-@media (max-width: 1024px) {
-  .produk-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 900px) {
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-  }
-}
-
-@media (max-width: 768px) {
-  .produk-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .produk-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* FOOTER */
+/* ===== FOOTER ===== */
 footer.site-footer {
   margin-top: 80px;
   padding: 40px 100px 20px;
@@ -574,7 +403,6 @@ footer.site-footer {
   align-items: start;
 }
 
-/* Logo dan deskripsi */
 .footer-logo img {
   width: 150px;
   height: auto;
@@ -588,7 +416,6 @@ footer.site-footer {
   line-height: 1.6;
 }
 
-/* Judul kolom */
 .footer-col h6 {
   margin-bottom: 14px;
   font-size: 15px;
@@ -596,7 +423,6 @@ footer.site-footer {
   color: #fff;
 }
 
-/* Link umum */
 .footer-col a {
   display: flex;
   align-items: center;
@@ -613,12 +439,10 @@ footer.site-footer {
   text-decoration: none;
 }
 
-/* Ikon */
 .footer-col a i {
   font-size: 16px;
 }
 
-/* Bagian bawah footer */
 .footer-bottom {
   margin-top: 32px;
   border-top: 1px solid rgba(16, 24, 40, 0.1);
@@ -632,28 +456,441 @@ footer.site-footer {
   color: #76c3ff;
 }
 
-/* Responsif */
-/* Default Desktop (>= 1025px) */
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 40px;
+/* ===== RESPONSIVE MEDIA QUERIES ===== */
+
+/* Desktop (>= 1025px) */
+@media (min-width: 1025px) {
+  header {
+    padding: 10px 40px;
+  }
+
+  .nav-menu ul {
+    gap: 40px;
+  }
+
+  .nav-icons {
+    gap: 15px;
+  }
+
+  /* Hide hamburger icon */
+  .nav-icons img.menu-icon {
+    display: none;
+  }
+
+  /* Hide mobile icons */
+  .mobile-icons {
+    display: none;
+  }
 }
 
-/* Tablet (>= 601px dan <= 1024px) */
+/* Tablet (601px - 1024px) */
 @media (min-width: 601px) and (max-width: 1024px) {
+  header {
+    padding: 10px 30px;
+  }
+
+  .logo img {
+    width: 180px;
+  }
+
+  .nav-menu ul {
+    gap: 25px;
+  }
+
+  .nav-icons {
+    gap: 12px;
+  }
+
+  /* Hide hamburger and mobile icons */
+  .nav-icons img.menu-icon {
+    display: none;
+  }
+
+  .mobile-icons {
+    display: none;
+  }
+
+  /* Card */
+  .adat-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image-wrapper {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    aspect-ratio: 1;
+    margin: 0 auto;
+  }
+
+  .adat-content h2 {
+    font-size: 1.5rem;
+    margin-top: 15px;
+  }
+
+  .adat-content p {
+    font-size: 0.9rem;
+  }
+
+  /* Produk - TETAP 4 KOLOM */
+  .produk-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .produk-item h4 {
+    font-size: 0.85rem;
+  }
+
+  .produk-item p {
+    font-size: 0.7rem;
+  }
+
+  .stars {
+    font-size: 18px;
+  }
+
+  .harga {
+    font-size: 0.85rem;
+  }
+
+  .lihat-koleksi-btn {
+    padding: 10px 24px;
+    font-size: 0.8rem;
+  }
+
+  /* Footer */
   .footer-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  footer.site-footer {
+    padding: 30px 40px;
   }
 }
 
 /* Mobile (<= 600px) */
 @media (max-width: 600px) {
+  header {
+    flex-wrap: wrap;
+    padding: 10px 15px;
+    position: relative;
+  }
+
+  .logo img {
+    width: 130px;
+  }
+
+  /* Hide desktop navigation by default */
+  .nav-menu ul {
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+    display: none;
+    padding: 15px 0;
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+  }
+
+  /* Show menu when active */
+  .nav-menu ul.active {
+    display: flex;
+  }
+
+  .nav-menu ul li {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .nav-menu ul li a {
+    font-size: 0.9rem;
+  }
+
+  /* Show hamburger icon */
+  .nav-icons img.menu-icon {
+    display: inline-block !important;
+    width: 28px;
+    cursor: pointer;
+  }
+
+  /* Hide all nav-icons except hamburger */
+  .nav-icons > img:not(.menu-icon),
+  .nav-icons > .search-wrapper,
+  .nav-icons > .nav-button,
+  .nav-icons > a {
+    display: none;
+  }
+
+  .nav-icons {
+    margin-left: auto;
+    gap: 10px;
+  }
+
+  /* Show mobile icons in hamburger menu */
+  .mobile-icons {
+    display: block !important;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+  }
+
+  .mobile-icon-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .mobile-icon-group .search-wrapper {
+    width: 90%;
+    max-width: 280px;
+    height: 36px;
+  }
+
+  .mobile-icon-link {
+    display: inline-block;
+  }
+
+  .mobile-icon-link img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .nav-button.nav-button-mobile {
+    display: inline-block;
+    font-size: 0.85rem;
+    padding: 8px 20px;
+  }
+
+  /* Card */
+  .card-container {
+    padding: 30px 10px;
+  }
+
+  .adat-card {
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .image-wrapper {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .adat-content h2 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+
+  .adat-content p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .read-more {
+    font-size: 0.85rem;
+  }
+
+  /* Produk - TETAP 4 KOLOM DENGAN SCROLL HORIZONTAL */
+  .produk-kebaya {
+    padding: 30px 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .produk-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 0 15px;
+    width: max-content;
+    min-width: 100%;
+  }
+
+  .produk-item {
+    min-width: 150px;
+  }
+
+  .produk-item h4 {
+    font-size: 0.75rem;
+  }
+
+  .produk-item p {
+    font-size: 0.65rem;
+  }
+
+  .stars {
+    font-size: 14px;
+  }
+
+  .harga {
+    font-size: 0.75rem;
+  }
+
+  .lihat-koleksi-btn {
+    padding: 6px 16px;
+    font-size: 0.7rem;
+  }
+
+  .lihat-produk-wrapper {
+    margin-top: 25px;
+    padding: 0 15px;
+  }
+
+  .lihat-produk-btn {
+    padding: 8px 50px;
+    font-size: 0.85rem;
+  }
+
+  /* Footer */
+  footer.site-footer {
+    margin-top: 50px;
+    padding: 25px 20px;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .footer-logo img {
+    width: 120px;
+  }
+
+  .footer-col h6 {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .footer-col a,
+  .footer-col small {
+    font-size: 11px;
+  }
+
+  .footer-bottom {
+    font-size: 10px;
+    margin-top: 20px;
+    padding-top: 12px;
   }
 }
 
-footer.site-footer {
-  padding: 30px 40px;
+/* Mobile Extra Small (<= 400px) */
+@media (max-width: 400px) {
+  header {
+    padding: 8px 10px;
+  }
+
+  .logo img {
+    width: 100px;
+  }
+
+  .nav-menu ul {
+    top: 55px;
+    padding: 12px 0;
+  }
+
+  .nav-menu ul li a {
+    font-size: 0.85rem;
+  }
+
+  .nav-icons img.menu-icon {
+    width: 24px;
+  }
+
+  /* Card */
+  .card-container {
+    padding: 20px 10px;
+  }
+
+  .adat-card {
+    padding: 12px;
+  }
+
+  .adat-content h2 {
+    font-size: 1rem;
+  }
+
+  .adat-content p {
+    font-size: 0.75rem;
+  }
+
+  .read-more {
+    font-size: 0.8rem;
+  }
+
+  /* Produk - TETAP 4 KOLOM DENGAN SCROLL */
+  .produk-kebaya {
+    padding: 20px 0;
+  }
+
+  .produk-grid {
+    grid-template-columns: repeat(4, minmax(140px, 1fr));
+    gap: 12px;
+    padding: 0 10px;
+  }
+
+  .produk-item {
+    min-width: 140px;
+  }
+
+  .produk-item h4 {
+    font-size: 0.7rem;
+  }
+
+  .produk-item p {
+    font-size: 0.6rem;
+  }
+
+  .stars {
+    font-size: 12px;
+  }
+
+  .harga {
+    font-size: 0.7rem;
+  }
+
+  .lihat-koleksi-btn {
+    padding: 6px 14px;
+    font-size: 0.65rem;
+  }
+
+  .lihat-produk-wrapper {
+    padding: 0 10px;
+  }
+
+  .lihat-produk-btn {
+    padding: 8px 40px;
+    font-size: 0.8rem;
+  }
+
+  /* Footer */
+  footer.site-footer {
+    padding: 20px 15px;
+  }
+
+  .footer-logo img {
+    width: 100px;
+  }
+
+  .footer-col h6 {
+    font-size: 12px;
+  }
+
+  .footer-col a,
+  .footer-col small {
+    font-size: 10px;
+  }
+
+  .footer-bottom {
+    font-size: 9px;
+  }
 }
