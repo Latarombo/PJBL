@@ -20,12 +20,85 @@
     />
   </head>
   <body>
+    <header>
+      <!-- Logo di kiri -->
+      <div class="logo">
+        <a href="homepage.html">
+          <img src="NADANE.png" alt="Logo NADANE" />
+        </a>
+      </div>
+
+      <!-- Navigasi di tengah -->
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="homepage.html">Beranda</a></li>
+          <li><a href="Katalog.html">Katalog</a></li>
+          <li><a href="tentangkami.html">Tentang Kami</a></li>
+          <li><a href="Bantuan.html">Bantuan</a></li>
+          <!-- Tambahan: Item untuk ikon-ikon di hamburger -->
+          <li class="mobile-icons">
+            <div class="mobile-icon-group">
+              <form
+                class="search-wrapper"
+                role="search"
+                aria-label="Pencarian produk"
+              >
+                <input
+                  type="search"
+                  class="search-input"
+                  placeholder="Cari produk..."
+                  aria-label="Cari produk"
+                  name="search"
+                  autocomplete="off"
+                />
+                <button type="submit" class="search-button" aria-label="Cari">
+                  <img src="search.svg" alt="Icon pencarian" />
+                </button>
+              </form>
+              <a href="profile.html" class="mobile-icon-link"
+                ><img src="profile.svg" alt="Profil"
+              /></a>
+              <a href="keranjang.html" class="mobile-icon-link"
+                ><img src="keranjang.svg" alt="Keranjang"
+              /></a>
+              <button class="nav-button nav-button-mobile">Bergabung</button>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Ikon di Kanan (untuk desktop/tablet) -->
+      <div class="nav-icons">
+        <form
+          class="search-wrapper"
+          role="search"
+          aria-label="Pencarian produk"
+        >
+          <input
+            type="search"
+            class="search-input"
+            placeholder="Cari produk terbaik kami..."
+            aria-label="Cari produk"
+            name="search"
+            autocomplete="off"
+          />
+          <button type="submit" class="search-button" aria-label="Cari">
+            <img src="search.svg" alt="Icon pencarian" />
+          </button>
+        </form>
+        <button class="nav-button">Bergabung</button>
+        <img src="hamburger.svg" alt="Menu" class="menu-icon" />
+        <img src="garis.svg" alt="Menu" />
+        <img src="keranjang.svg" alt="Keranjang" />
+        <img src="profile.svg" alt="Profil" />
+      </div>
+    </header>
     <!-- card -->
     <section class="card-container">
       <div class="adat-card">
         <div class="image-wrapper">
           <img
-            src="../images_gnrl/katalog_main/gambarArtikel.png"
+            src="gambardikatalog.svg"
             alt="Pakaian Adat Kebaya"
             class="adat-image"
           />
@@ -39,7 +112,9 @@
             sederhana, tapi detail seperti bordir dan payet yang ada di Kebaya
             membuatnya terlihat sangat elegan.
           </p>
-          <a href="detail-kebaya.html" class="read-more">Baca Selengkapnya →</a>
+          <a href="artikel-kebaya.html" class="read-more"
+            >Baca Selengkapnya →</a
+          >
         </div>
       </div>
     </section>
@@ -85,10 +160,7 @@
         <!-- Produk 4 -->
         <div class="produk-item">
           <div class="produk-item-image-wrapper">
-            <img
-              src="../images_gnrl/katalog_main/kebayaHitam.png"
-              alt="Kebaya Hitam"
-            />
+            <img src="hitam.svg" alt="Kebaya Hitam" />
             <button class="lihat-koleksi-btn">Lihat Koleksi</button>
           </div>
           <h4>Kebaya Hitam</h4>
@@ -100,10 +172,7 @@
         <!-- Produk 5 -->
         <div class="produk-item">
           <div class="produk-item-image-wrapper">
-            <img
-              src="../images_gnrl/katalog_main/kebayaAbu.png"
-              alt="Pakaian Adat Kebaya Abu"
-            />
+            <img src="biru.svg" alt="Pakaian Adat Kebaya Abu" />
             <button class="lihat-koleksi-btn">Lihat Koleksi</button>
           </div>
           <h4>Pakaian Adat Kebaya Abu</h4>
@@ -115,10 +184,7 @@
         <!-- Produk 6 -->
         <div class="produk-item">
           <div class="produk-item-image-wrapper">
-            <img
-              src="../images_gnrl/katalog_main/pakaianKebayaMerah.png"
-              alt="Kebaya Merah"
-            />
+            <img src="merah.svg" alt="Kebaya Merah" />
             <button class="lihat-koleksi-btn">Lihat Koleksi</button>
           </div>
           <h4>Kebaya Merah</h4>
@@ -130,10 +196,7 @@
         <!-- Produk 7 -->
         <div class="produk-item">
           <div class="produk-item-image-wrapper">
-            <img
-              src="../images_gnrl/katalog_main/kebayaMerah2.png"
-              alt="Pakaian Kebaya Merah"
-            />
+            <img src="merahhitam.svg" alt="Pakaian Kebaya Merah" />
             <button class="lihat-koleksi-btn">Lihat Koleksi</button>
           </div>
           <h4>Pakaian Kebaya Merah</h4>
@@ -145,10 +208,7 @@
         <!-- Produk 8 -->
         <div class="produk-item">
           <div class="produk-item-image-wrapper">
-            <img
-              src="../images_gnrl/katalog_main/kebayaHijau.png"
-              alt="Kebaya Hijau"
-            />
+            <img src="hijau.svg" alt="Kebaya Hijau" />
             <button class="lihat-koleksi-btn">Lihat Koleksi</button>
           </div>
           <h4>Kebaya Hijau</h4>
@@ -162,5 +222,123 @@
     <div class="lihat-produk-wrapper">
       <button class="lihat-produk-btn">Lihat Produk Lainnya</button>
     </div>
+
+    <footer class="site-footer" role="contentinfo" aria-label="Footer">
+      <div class="footer-grid">
+        <!-- Kolom 1: Logo & deskripsi -->
+        <div class="footer-col">
+          <div class="footer-logo">
+            <img src="NADANE.png" alt="logo Nadane" />
+          </div>
+          <small>
+            Nadane hadir untuk melestarikan keindahan pakaian adat Nusantara.
+            Dengan katalog online dan media edukasi, kami mengajak Anda mengenal
+            dan mencintai warisan budaya Indonesia.
+          </small>
+        </div>
+
+        <!-- Kolom 2: Navigasi cepat -->
+        <div class="footer-col">
+          <h6>Navigasi Cepat</h6>
+          <a href="homepage.html">Beranda</a>
+          <a href="search">Pencarian</a>
+          <a href="Katalog.html">Katalog produk</a>
+          <a href="Login.html">Bergabung</a>
+          <a href="tentangkami.html">Tentang kami</a>
+          <a href="seller">Jadi Penjual</a>
+          <a href="Bantuan.html">Bantuan</a>
+        </div>
+
+        <!-- Kolom 3: Ikuti Kami -->
+        <div class="footer-col">
+          <h6>Ikuti Kami</h6>
+          <a href="https://wa.me/081234839603"
+            ><img src="wa.svg" alt="WhatsApp" /> WhatsApp</a
+          >
+          <a href="http://t.me/Najwarorowidari24RPLC"
+            ><img src="telegram.svg" alt="Telegram" /> Telegram</a
+          >
+          <a href="https://www.instagram.com/nmiyung"
+            ><img src="instagram.svg" alt="Instagram" /> Instagram</a
+          >
+          <a href="https://www.facebook.com/najwarorowidari"
+            ><img src="facebook.svg" alt="Facebook" /> Facebook</a
+          >
+        </div>
+
+        <!-- Kolom 4: Kontak -->
+        <div class="footer-col">
+          <h6>Kontak</h6>
+          <a href="https://wa.me/081234839603"
+            ><img src="telepon.svg" alt="telepon" /> +6281234623303</a
+          >
+          <a href="mailto:email@nrorowidari.com"
+            ><img src="email.svg" alt="email" /> nadane@gmail.com</a
+          >
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-bottom">
+        © 2025 Nadane. All rights reserved. &nbsp; | &nbsp;
+        <a href="#">Syarat & Ketentuan</a> &nbsp; | &nbsp;
+        <a href="#">Kebijakan Privasi</a>
+      </div>
+    </footer>
+    <script>
+      // Script hamburger
+      const menuIcon = document.querySelector(".nav-icons img.menu-icon");
+      const navMenu = document.querySelector(".nav-menu ul");
+
+      if (menuIcon && navMenu) {
+        menuIcon.addEventListener("click", () => {
+          navMenu.classList.toggle("active");
+        });
+      }
+
+      // Script search (untuk semua search-wrapper)
+      const searchWrappers = document.querySelectorAll(".search-wrapper");
+      searchWrappers.forEach((wrapper) => {
+        const searchInput = wrapper.querySelector(".search-input");
+        const searchButton = wrapper.querySelector(".search-button");
+
+        wrapper.addEventListener("click", (e) => {
+          if (!wrapper.classList.contains("active")) {
+            e.preventDefault();
+            wrapper.classList.add("active");
+            searchInput.focus();
+          }
+        });
+
+        wrapper.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const query = searchInput.value.trim();
+          if (query) {
+            alert(`Mencari: ${query}`);
+            // Ganti dengan redirect: window.location.href = `/search?query=${encodeURIComponent(query)}`;
+          }
+        });
+      });
+
+      // Klik di luar: sembunyikan search
+      document.addEventListener("click", (e) => {
+        searchWrappers.forEach((wrapper) => {
+          if (!wrapper.contains(e.target)) {
+            wrapper.classList.remove("active");
+            wrapper.querySelector(".search-input").value = "";
+          }
+        });
+      });
+
+      // Escape untuk keluar
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          searchWrappers.forEach((wrapper) => {
+            wrapper.classList.remove("active");
+            wrapper.querySelector(".search-input").value = "";
+          });
+        }
+      });
+    </script>
   </body>
 </html>
