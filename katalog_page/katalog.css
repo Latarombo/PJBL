@@ -243,6 +243,9 @@ nav {
   margin-bottom: 12px;
 }
 
+.produk-item img:hover {
+}
+
 .produk-item h4 {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 410;
@@ -251,6 +254,10 @@ nav {
   color: #1c0d0d;
 }
 
+.stars {
+  color: #ffa500;
+  font-size: 21px;
+}
 .produk-item p {
   font-size: 0.85rem;
   color: #944f4f;
