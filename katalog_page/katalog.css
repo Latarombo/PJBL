@@ -17,140 +17,6 @@ p {
   color: #1c0d0d;
 }
 
-header {
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.589);
-  border-bottom: 1px solid rgba(16, 24, 40, 0.06);
-  width: 100%;
-  padding: 15px 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-nav {
-  gap: 21px;
-}
-
-.container_header {
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-}
-
-/* logo */
-.logo img {
-  width: 150px;
-  height: auto;
-  display: block;
-}
-
-/* NAV tengah */
-.nav {
-  flex: 1;
-  display: flex;
-  justify-content: right;
-}
-
-.nav ul {
-  list-style: none;
-  display: flex;
-  gap: 15px;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-}
-
-.nav ul li a {
-  color: #1c0d0d;
-  text-decoration: none;
-  font-weight: 500;
-  position: relative;
-  padding: 6px 4px;
-  transition: 0.3s;
-}
-
-.nav a:hover {
-  color: #9a3b3b;
-}
-
-.nav a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  left: 0;
-  bottom: 2px;
-  background: #9a3b3b;
-  border-radius: 2px;
-}
-
-.nav a.active::after {
-  width: 100%;
-}
-
-/* kanan */
-.nav2 {
-  display: flex;
-  align-items: center;
-  gap: 21px;
-}
-
-.icon-btn {
-  width: auto;
-  height: 35px;
-  display: flex;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.icon-btn img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.pipe {
-  width: 3px;
-  height: 40px;
-  display: flex;
-  border: none;
-  background: transparent;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  pointer-events: none;
-  user-select: none;
-  -webkit-user-drag: none;
-  object-fit: cover;
-}
-
-.pipe img {
-  width: 100%;
-  height: 100%;
-  border-radius: 25%;
-  justify-items: center;
-}
-
-.btn-bergabung {
-  background: #000;
-  color: #fff;
-  border-radius: 15px;
-  padding: 9px 21px;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
 /* card */
 .card-container {
   display: flex;
@@ -203,7 +69,7 @@ nav {
 
 .adat-content p {
   font-family: "Roboto", sans-serif;
-  font-size: 1rem; /* atau 16px */
+  font-size: 1rem;
   font-weight: 400;
   color: #000;
   margin-bottom: 20px;
@@ -222,6 +88,7 @@ nav {
   color: dimgrey;
 }
 
+/* PRODUK KEBAYA - DIPERBAIKI */
 .produk-kebaya {
   background-color: #faf7f7;
   padding: 40px 20px;
@@ -231,19 +98,89 @@ nav {
 
 .produk-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 kolom */
-  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px;
 }
 
-.produk-item img {
-  width: 217px;
-  height: 217px; /* gambar tidak terlalu tinggi */
-  object-fit: cover;
+.produk-item {
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Image wrapper untuk kontrol hover */
+.produk-item-image-wrapper {
+  position: relative;
+  width: 100%;
   border-radius: 12px;
+  overflow: hidden;
   margin-bottom: 12px;
 }
 
-.produk-item img:hover {
+.produk-item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  transition: filter 0.3s ease;
+}
+
+.produk-item:hover img {
+  filter: brightness(0.7);
+}
+
+/* Overlay gelap */
+.produk-item-image-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+  border-radius: 12px;
+}
+
+.produk-item:hover .produk-item-image-wrapper::before {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Tombol "Lihat Koleksi" */
+.lihat-koleksi-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(90deg, #9a3b3b, #7e3030);
+  color: white;
+  padding: 12px 32px;
+  border-radius: 25px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 2;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(154, 59, 59, 0.3);
+}
+
+.produk-item:hover .lihat-koleksi-btn {
+  opacity: 1;
+}
+
+.lihat-koleksi-btn:hover {
+  background: linear-gradient(90deg, #7e3030, #692828);
+  transform: translate(-50%, -50%) scale(1.05);
 }
 
 .produk-item h4 {
@@ -258,6 +195,7 @@ nav {
   color: #ffa500;
   font-size: 21px;
 }
+
 .produk-item p {
   font-size: 0.85rem;
   color: #944f4f;
@@ -289,86 +227,27 @@ nav {
   border: none;
 }
 
-/* Hover: jadi putih dengan border dan teks merah */
 .lihat-produk-btn:hover {
   background: linear-gradient(90deg, #7e3030, #692828);
 }
 
-/* footer */
-footer.site-footer {
-  margin-top: 80px;
-  padding: 40px 100px 20px;
-  background: #ffff;
-  border-top: 1px solid rgba(16, 24, 40, 0.05);
-  font-family: "Poppins";
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 40px;
-  align-items: start;
-}
-
-/* logo dan deskripsi */
-.footer-logo img {
-  width: 150px;
-  height: auto;
-  margin-bottom: 10px;
-}
-
-.footer-col small {
-  display: block;
-  font-size: 13px;
-  color: #555;
-  line-height: 1.6;
-}
-
-/* judul kolom */
-.footer-col h6 {
-  margin-bottom: 14px;
-  font-size: 15px;
-  font-weight: 600;
-  color: #1a1a1a;
-}
-
-/* Link umum */
-.footer-col a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  color: #444;
-  text-decoration: none;
-  margin-bottom: 8px;
-  transition: 0.3s ease;
-}
-
-.footer-col a:hover {
-  color: #9a3b3b;
-  text-decoration: none;
-}
-
-/* Ikon */
-.footer-col a i {
-  font-size: 16px;
-}
-
-/* Bagian bawah footer */
-.footer-bottom {
-  margin-top: 32px;
-  border-top: 1px solid rgba(16, 24, 40, 0.1);
-  padding-top: 16px;
-  text-align: center;
-  font-size: 13px;
-  color: #555;
-}
-
 /* Responsif */
+@media (max-width: 1024px) {
+  .produk-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 900px) {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .produk-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -378,5 +257,11 @@ footer.site-footer {
   }
   footer.site-footer {
     padding: 30px 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .produk-grid {
+    grid-template-columns: 1fr;
   }
 }
